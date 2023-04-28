@@ -1,10 +1,12 @@
 package model.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Raca {
     private String Nome;
     private int[] atributos = {0,0,0,0};
+    private List<Classe> classesComuns = new ArrayList<Classe>();
     private Habilidade habilidadeAutomatica;
     private List<Habilidade> habilidadesExtras;
     
@@ -59,6 +61,13 @@ public class Raca {
     
     public void setVontade(int vontade){
         this.atributos[3] = vontade;
+    }
+    
+    public void getClassesComuns(){
+        //em breve
+    }
+    public void addClasseComum(Classe classe){
+        this.classesComuns.add(classe);
     }
 
     public Habilidade getHabilidadeAutomatica() {
