@@ -5,7 +5,7 @@ import model.enums.AlcanceEnum;
 import model.enums.ItemEspecialEnum;
 import model.enums.TipoDanoEnum;
 
-public class ItemCorpoACorpo {
+public class ItemCorpoACorpo extends Item {
     private int dano;
     private ArrayList<TipoDanoEnum> tipoDeDano;
     private String forcaNecessaria;
