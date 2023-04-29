@@ -1,9 +1,7 @@
 package model.entities;
 
 import java.util.ArrayList;
-import model.enums.AlcanceEnum;
 import model.enums.ItemEspecialEnum;
-import model.enums.TipoDanoEnum;
 
 public class Item {
     private String nome;
@@ -12,6 +10,8 @@ public class Item {
     private String descricao;
     private QualidadeItem qualidadeDoItem;
     private MaterialItem materialDoItem;
+    private ArrayList<ItemEspecialEnum> especial;
+    private String forcaNecessaria;
 
     public Item() {}
 
@@ -20,12 +20,16 @@ public class Item {
             double custo,
             String descricao, 
             QualidadeItem qualidadeDoItem, 
-            MaterialItem materialDoItem) {
+            MaterialItem materialDoItem,
+            ArrayList<ItemEspecialEnum> especial,
+            String forcaNecessaria) {
         this.nome = nome;
         this.custo = custo;
         this.descricao = descricao;
         this.qualidadeDoItem = qualidadeDoItem;
         this.materialDoItem = materialDoItem;
+        this.especial = especial;
+        this.forcaNecessaria = forcaNecessaria;
     }
 
     public String getNome() {
@@ -75,8 +79,21 @@ public class Item {
     public void setMaterialDoItem(MaterialItem materialDoItem) {
         this.materialDoItem = materialDoItem;
     }
-     
-    
-    
-    
+
+    public ArrayList<ItemEspecialEnum> getEspecial() {
+        return especial;
+    }
+
+    public void setEspecial(ArrayList<ItemEspecialEnum> especial) {
+        this.especial = especial;
+    }
+
+    public String getForcaNecessaria() {
+        return forcaNecessaria;
+    }
+
+    public void setForcaNecessaria(String forcaNecessaria) {
+        this.forcaNecessaria = forcaNecessaria;
+    }
+       
 }

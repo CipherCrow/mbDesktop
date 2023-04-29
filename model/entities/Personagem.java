@@ -22,4 +22,5 @@ public class Personagem {
     private Defesa defesas = new Defesa();
     
     //Inventário e Itens
+    private Inventario inventario = new Inventario();
 }
