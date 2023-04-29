@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Classe {
     private String nome;
-    private Atributos bonusDeAtributos;
+    private Atributos bonusDeAtributos = new Atributos();
     private Habilidade habilidadeAutomatica;
     private List<Habilidade> habilidades;
     
