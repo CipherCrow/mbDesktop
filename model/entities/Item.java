@@ -2,13 +2,14 @@ package model.entities;
 
 import java.util.ArrayList;
 import model.enums.ItemEspecialEnum;
+import model.enums.ItemQualidadeEnum;
 
 public class Item {
     private String nome;
     private double custo;
     private double peso = 0;
     private String descricao;
-    private QualidadeItem qualidadeDoItem;
+    private ItemQualidadeEnum qualidadeDoItem;
     private MaterialItem materialDoItem;
     private ArrayList<ItemEspecialEnum> especial;
     private String forcaNecessaria;
@@ -19,7 +20,7 @@ public class Item {
             String nome,
             double custo,
             String descricao, 
-            QualidadeItem qualidadeDoItem, 
+            ItemQualidadeEnum qualidadeDoItem, 
             MaterialItem materialDoItem,
             ArrayList<ItemEspecialEnum> especial,
             String forcaNecessaria) {
@@ -64,11 +65,11 @@ public class Item {
         this.descricao = descricao;
     }
 
-    public QualidadeItem getQualidadeDoItem() {
+    public ItemQualidadeEnum getQualidadeDoItem() {
         return qualidadeDoItem;
     }
 
-    public void setQualidadeDoItem(QualidadeItem qualidadeDoItem) {
+    public void setQualidadeDoItem(ItemQualidadeEnum qualidadeDoItem) {
         this.qualidadeDoItem = qualidadeDoItem;
     }
 
