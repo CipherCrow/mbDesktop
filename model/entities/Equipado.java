@@ -47,9 +47,9 @@ class Equipado {
     
     private boolean verificaUltrapassaLimiteMaos(int modificadorMaos){
         if(qtdSeguraveisAtual + modificadorMaos <= maximoDeSeguraveis){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
     
     private void segurarItem(Item item){

@@ -10,8 +10,7 @@ public class Personagem {
     private String motivacao;
     
     //Contabilizadores de vida
-    private int pontosDeVida = 60;
-    private int pontosDeMana = 60;
+    private Vitalidade vitalidade = new vitalidade();
     
     //Atributos
     private Atributos atributos = new Atributos();
