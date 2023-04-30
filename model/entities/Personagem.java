@@ -1,13 +1,17 @@
 package model.entities;
 
+import java.util.ArrayList;
+
 public class Personagem {
     //Básico
     private String nome;
     private Raca raca;
     private Classe classe;
+    private Antecedente antecedente;
     private int experiencia = 0;
     private int nivel = 1;
     private String motivacao;
+    private ArrayList<Idioma> idiomas;
     
     //Contabilizadores de vida
     private Vitalidade vitalidade = new Vitalidade();

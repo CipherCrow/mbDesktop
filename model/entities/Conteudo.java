@@ -15,11 +15,21 @@ public class Conteudo {
     private ArrayList<Organizacao> organizacoes;
     private ArrayList<MaterialItem> materiaisItens;
     private ArrayList<Antecedente> antecedente;
+    private ArrayList<Idioma> idiomas; 
 
-    public Conteudo() {
-    }
+    public Conteudo(){}
 
-    public Conteudo(String nome, ArrayList<Caminho> caminhos, ArrayList<Raca> racas, ArrayList<Classe> classes, ArrayList<Habilidade> habilidade, ArrayList<Item> items, ArrayList<Organizacao> organizacoes, ArrayList<MaterialItem> materiaisItens, ArrayList<Antecedente> antecedente) {
+    public Conteudo(
+            String nome,
+            ArrayList<Caminho> caminhos,
+            ArrayList<Raca> racas,
+            ArrayList<Classe> classes,
+            ArrayList<Habilidade> habilidade,
+            ArrayList<Item> items,
+            ArrayList<Organizacao> organizacoes,
+            ArrayList<MaterialItem> materiaisItens,
+            ArrayList<Antecedente> antecedente,
+            ArrayList<Idioma> idiomas) {
         this.nome = nome;
         this.caminhos = caminhos;
         this.racas = racas;
@@ -29,7 +39,16 @@ public class Conteudo {
         this.organizacoes = organizacoes;
         this.materiaisItens = materiaisItens;
         this.antecedente = antecedente;
+        this.idiomas = idiomas;
     }
+
+    public ArrayList<Idioma> getIdiomas() {
+        return idiomas;
+    }
+
+    public void setIdiomas(ArrayList<Idioma> idiomas) {
+        this.idiomas = idiomas;
+    } 
 
     public ArrayList<Raca> getRacas() {
         return racas;
