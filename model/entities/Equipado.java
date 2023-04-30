@@ -24,16 +24,16 @@ class Equipado {
             
             if(verificaUmaMao(item)){
                 if( verificaUltrapassaLimiteMaos(1) ){
-                    qtdSeguraveisAtual++;
+                    this.qtdSeguraveisAtual++;
                     segurarItem(item);
                 }    
             } else if(verificaDuasMaos(item)){
                 if( verificaUltrapassaLimiteMaos(2) ){
-                    qtdSeguraveisAtual += 2;
+                    this.qtdSeguraveisAtual += 2;
                     segurarItem(item);
                 } 
             }
-            
+          
         }
     }
     
@@ -52,12 +52,18 @@ class Equipado {
         return true;
     }
     
-    private void segurarItem(Item item){
+    public void segurarItem(Item item){
         this.segurando.add(item);
     }
     
-    private void soltarItem(Item item){
-        
+    public void soltarItem(Item item){
+        if(verificaUmaMao(item)){
+            this.qtdSeguraveisAtual--;
+            this.segurando.remove( item );
+        }else if(verificaDuasMaos(item)){
+            this.qtdSeguraveisAtual-=2;
+            this.segurando.remove( item );
+        }
     }
     
     public void equiparArmadura(ItemDefesa item){

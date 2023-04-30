@@ -10,7 +10,7 @@ public class Personagem {
     private String motivacao;
     
     //Contabilizadores de vida
-    private Vitalidade vitalidade = new vitalidade();
+    private Vitalidade vitalidade = new Vitalidade();
     
     //Atributos
     private Atributos atributos = new Atributos();

@@ -1,8 +1,8 @@
 package model.entities;
 
 class Vitalidade {
-    private int pontosDeVida = 60;
-    private int pontosDeMana = 60;
+    private int pontosDeVida = 30;
+    private int pontosDeMana = 30;
 
     public Vitalidade(){}
     
