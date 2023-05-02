@@ -21,10 +21,27 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        areaDeTrabalho = new javax.swing.JDesktopPane();
+        jdpAreaDeTrabalho = new javax.swing.JDesktopPane();
         jmbBarraMenu = new javax.swing.JMenuBar();
         jmBemVindo = new javax.swing.JMenu();
         jmArquivo = new javax.swing.JMenu();
+        jmiPersonagens = new javax.swing.JMenuItem();
+        jmiAntecedentes = new javax.swing.JMenuItem();
+        jmiRacas = new javax.swing.JMenuItem();
+        jmiClasses = new javax.swing.JMenuItem();
+        jmiHabilidades = new javax.swing.JMenuItem();
+        jmiIdiomas = new javax.swing.JMenuItem();
+        jmItens = new javax.swing.JMenuItem();
+        jmiMateriais = new javax.swing.JMenuItem();
+        jmCadastrar = new javax.swing.JMenu();
+        jmiCadPersonagem = new javax.swing.JMenuItem();
+        jmiCadAntecedente = new javax.swing.JMenuItem();
+        jmiCadRaca = new javax.swing.JMenuItem();
+        jmiCadClasse = new javax.swing.JMenuItem();
+        jmiCadHabilidade = new javax.swing.JMenuItem();
+        jmiCadIdioma = new javax.swing.JMenuItem();
+        jmiCadItem = new javax.swing.JMenuItem();
+        jmiCadMaterial = new javax.swing.JMenuItem();
         jmConfig = new javax.swing.JMenu();
         jmImport = new javax.swing.JMenu();
         jmSobre = new javax.swing.JMenu();
@@ -34,37 +51,98 @@ public class Main extends javax.swing.JFrame {
         setName("Principal"); // NOI18N
         setResizable(false);
 
-        areaDeTrabalho.setToolTipText("");
+        jdpAreaDeTrabalho.setToolTipText("");
 
-        javax.swing.GroupLayout areaDeTrabalhoLayout = new javax.swing.GroupLayout(areaDeTrabalho);
-        areaDeTrabalho.setLayout(areaDeTrabalhoLayout);
-        areaDeTrabalhoLayout.setHorizontalGroup(
-            areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jdpAreaDeTrabalhoLayout = new javax.swing.GroupLayout(jdpAreaDeTrabalho);
+        jdpAreaDeTrabalho.setLayout(jdpAreaDeTrabalhoLayout);
+        jdpAreaDeTrabalhoLayout.setHorizontalGroup(
+            jdpAreaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1280, Short.MAX_VALUE)
         );
-        areaDeTrabalhoLayout.setVerticalGroup(
-            areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jdpAreaDeTrabalhoLayout.setVerticalGroup(
+            jdpAreaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 757, Short.MAX_VALUE)
         );
 
         jmBemVindo.setMnemonic('b');
         jmBemVindo.setText("Bem vindo");
+        jmBemVindo.setToolTipText("Sejá bem vindo!");
         jmbBarraMenu.add(jmBemVindo);
 
         jmArquivo.setMnemonic('A');
         jmArquivo.setText("Arquivo");
+        jmArquivo.setToolTipText("Verificar conteúdo já cadastrado");
+
+        jmiPersonagens.setText("Personagens");
+        jmiPersonagens.setToolTipText("");
+        jmArquivo.add(jmiPersonagens);
+
+        jmiAntecedentes.setText("Antecedentes");
+        jmArquivo.add(jmiAntecedentes);
+
+        jmiRacas.setText("Raças");
+        jmArquivo.add(jmiRacas);
+
+        jmiClasses.setText("Classes");
+        jmArquivo.add(jmiClasses);
+
+        jmiHabilidades.setText("Habilidades");
+        jmArquivo.add(jmiHabilidades);
+
+        jmiIdiomas.setText("Idiomas");
+        jmArquivo.add(jmiIdiomas);
+
+        jmItens.setText("Itens");
+        jmArquivo.add(jmItens);
+
+        jmiMateriais.setText("Materiais");
+        jmArquivo.add(jmiMateriais);
+
         jmbBarraMenu.add(jmArquivo);
+
+        jmCadastrar.setMnemonic('A');
+        jmCadastrar.setText("Cadastrar");
+        jmCadastrar.setToolTipText("Cadastrar conteúdo");
+
+        jmiCadPersonagem.setText("Personagem");
+        jmCadastrar.add(jmiCadPersonagem);
+
+        jmiCadAntecedente.setText("Antecedente");
+        jmCadastrar.add(jmiCadAntecedente);
+
+        jmiCadRaca.setText("Raça");
+        jmCadastrar.add(jmiCadRaca);
+
+        jmiCadClasse.setText("Classe");
+        jmCadastrar.add(jmiCadClasse);
+
+        jmiCadHabilidade.setText("Habilidade");
+        jmCadastrar.add(jmiCadHabilidade);
+
+        jmiCadIdioma.setText("Idioma");
+        jmCadastrar.add(jmiCadIdioma);
+
+        jmiCadItem.setText("Item");
+        jmCadastrar.add(jmiCadItem);
+
+        jmiCadMaterial.setText("Material");
+        jmCadastrar.add(jmiCadMaterial);
+
+        jmbBarraMenu.add(jmCadastrar);
 
         jmConfig.setMnemonic('C');
         jmConfig.setText("Configurações");
+        jmConfig.setToolTipText("Habilitar as configurações ");
         jmbBarraMenu.add(jmConfig);
 
         jmImport.setMnemonic('I');
         jmImport.setText("Importar");
+        jmImport.setToolTipText("Importar e Exportar Materiais.");
         jmbBarraMenu.add(jmImport);
 
         jmSobre.setMnemonic('S');
         jmSobre.setText("Sobre");
+        jmSobre.setToolTipText("Sobre o programa");
         jmbBarraMenu.add(jmSobre);
 
         setJMenuBar(jmbBarraMenu);
@@ -73,11 +151,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(areaDeTrabalho)
+            .addComponent(jdpAreaDeTrabalho)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(areaDeTrabalho)
+            .addComponent(jdpAreaDeTrabalho)
         );
 
         setSize(new java.awt.Dimension(1296, 788));
@@ -117,12 +195,29 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane areaDeTrabalho;
+    private javax.swing.JDesktopPane jdpAreaDeTrabalho;
     private javax.swing.JMenu jmArquivo;
     private javax.swing.JMenu jmBemVindo;
+    private javax.swing.JMenu jmCadastrar;
     private javax.swing.JMenu jmConfig;
     private javax.swing.JMenu jmImport;
+    private javax.swing.JMenuItem jmItens;
     private javax.swing.JMenu jmSobre;
     private javax.swing.JMenuBar jmbBarraMenu;
+    private javax.swing.JMenuItem jmiAntecedentes;
+    private javax.swing.JMenuItem jmiCadAntecedente;
+    private javax.swing.JMenuItem jmiCadClasse;
+    private javax.swing.JMenuItem jmiCadHabilidade;
+    private javax.swing.JMenuItem jmiCadIdioma;
+    private javax.swing.JMenuItem jmiCadItem;
+    private javax.swing.JMenuItem jmiCadMaterial;
+    private javax.swing.JMenuItem jmiCadPersonagem;
+    private javax.swing.JMenuItem jmiCadRaca;
+    private javax.swing.JMenuItem jmiClasses;
+    private javax.swing.JMenuItem jmiHabilidades;
+    private javax.swing.JMenuItem jmiIdiomas;
+    private javax.swing.JMenuItem jmiMateriais;
+    private javax.swing.JMenuItem jmiPersonagens;
+    private javax.swing.JMenuItem jmiRacas;
     // End of variables declaration//GEN-END:variables
 }

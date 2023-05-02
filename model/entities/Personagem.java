@@ -7,6 +7,7 @@ public class Personagem {
     private String nome;
     private Raca raca;
     private Classe classe;
+    private ArrayList<Classe> aprendizDeClasse;
     private Antecedente antecedente;
     private int experiencia = 0;
     private int nivel = 1;
