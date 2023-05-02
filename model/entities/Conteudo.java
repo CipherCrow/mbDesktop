@@ -16,6 +16,7 @@ public class Conteudo {
     private ArrayList<MaterialItem> materiaisItens;
     private ArrayList<Antecedente> antecedente;
     private ArrayList<Idioma> idiomas; 
+    private ArrayList<Habilidade> habilidadesExtras;
 
     public Conteudo(){}
 
@@ -29,7 +30,8 @@ public class Conteudo {
             ArrayList<Organizacao> organizacoes,
             ArrayList<MaterialItem> materiaisItens,
             ArrayList<Antecedente> antecedente,
-            ArrayList<Idioma> idiomas) {
+            ArrayList<Idioma> idiomas,
+            ArrayList<Habilidade> habilidadesExtras) {
         this.nome = nome;
         this.caminhos = caminhos;
         this.racas = racas;
@@ -40,8 +42,17 @@ public class Conteudo {
         this.materiaisItens = materiaisItens;
         this.antecedente = antecedente;
         this.idiomas = idiomas;
+        this.habilidadesExtras = habilidadesExtras;
     }
 
+    public ArrayList<Habilidade> getHabilidadesExtras() {
+        return habilidadesExtras;
+    }
+
+    public void setHabilidadesExtras(ArrayList<Habilidade> habilidadesExtras) {
+        this.habilidadesExtras = habilidadesExtras;
+    }
+    
     public ArrayList<Idioma> getIdiomas() {
         return idiomas;
     }
