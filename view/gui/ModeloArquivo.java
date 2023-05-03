@@ -62,6 +62,7 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
         jtpTextoDescricao.setText("Aqui ficará o texto formatado de descrição");
         jspTextoScroll.setViewportView(jtpTextoDescricao);
 
+        jbDetalhe.setMnemonic('d');
         jbDetalhe.setText("Detalhes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -111,8 +112,10 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Nome");
 
+        jbRemoverFiltros.setMnemonic('r');
         jbRemoverFiltros.setText("Remover Filtros");
 
+        jbFiltrar.setMnemonic('f');
         jbFiltrar.setText("Filtrar");
 
         javax.swing.GroupLayout jpCamposDeFiltroLayout = new javax.swing.GroupLayout(jpCamposDeFiltro);

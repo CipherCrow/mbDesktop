@@ -9,6 +9,7 @@ public class Item {
     private double custo;
     private double peso = 0;
     private String descricao;
+    private int quantidade;
     private ItemQualidadeEnum qualidadeDoItem;
     private MaterialItem materialDoItem;
     private ArrayList<ItemEspecialEnum> especial;
@@ -20,6 +21,7 @@ public class Item {
             String nome,
             double custo,
             String descricao, 
+            int quantidade,
             ItemQualidadeEnum qualidadeDoItem, 
             MaterialItem materialDoItem,
             ArrayList<ItemEspecialEnum> especial,
@@ -31,6 +33,14 @@ public class Item {
         this.materialDoItem = materialDoItem;
         this.especial = especial;
         this.forcaNecessaria = forcaNecessaria;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public String getNome() {
