@@ -8,7 +8,7 @@
           <Properties>
             <Property name="mnemonic" type="int" value="98"/>
             <Property name="text" type="java.lang.String" value="Bem vindo"/>
-            <Property name="toolTipText" type="java.lang.String" value="Sej&#xe1; bem vindo!"/>
+            <Property name="toolTipText" type="java.lang.String" value="Seja bem vindo!"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jmArquivo">
@@ -20,42 +20,66 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jmiPersonagens">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="P"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Personagens"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiAntecedentes">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="A"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Antecedentes"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiRacas">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="R"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ra&#xe7;as"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiClasses">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="C"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Classes"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiHabilidades">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="H"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Habilidades"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiIdiomas">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="I"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Idiomas"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmItens">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Itens"/>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="O"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Objetos"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiMateriais">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="M"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Materiais"/>
               </Properties>
             </MenuItem>
@@ -63,58 +87,82 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jmCadastrar">
           <Properties>
-            <Property name="mnemonic" type="int" value="65"/>
+            <Property name="mnemonic" type="int" value="99"/>
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
             <Property name="toolTipText" type="java.lang.String" value="Cadastrar conte&#xfa;do"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadPersonagem">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="P"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Personagem"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadAntecedente">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="A"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Antecedente"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadRaca">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="R"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ra&#xe7;a"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadClasse">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="C"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Classe"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadHabilidade">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="H"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Habilidade"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadIdioma">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="I"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Idioma"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Item"/>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="O"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Objeto"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadMaterial">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="M"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Material"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jmConfig">
+        <Menu class="javax.swing.JMenu" name="jmFatores">
           <Properties>
-            <Property name="mnemonic" type="int" value="67"/>
-            <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
-            <Property name="toolTipText" type="java.lang.String" value="Habilitar as configura&#xe7;&#xf5;es "/>
+            <Property name="mnemonic" type="int" value="102"/>
+            <Property name="text" type="java.lang.String" value="Fatores"/>
+            <Property name="toolTipText" type="java.lang.String" value="Modificar as configura&#xe7;&#xf5;es"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jmImport">
@@ -156,7 +204,7 @@
     <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="0"/>
   </AuxValues>
 
   <Layout>

@@ -42,7 +42,7 @@ public class Main extends javax.swing.JFrame {
         jmiCadIdioma = new javax.swing.JMenuItem();
         jmiCadItem = new javax.swing.JMenuItem();
         jmiCadMaterial = new javax.swing.JMenuItem();
-        jmConfig = new javax.swing.JMenu();
+        jmFatores = new javax.swing.JMenu();
         jmImport = new javax.swing.JMenu();
         jmSobre = new javax.swing.JMenu();
 
@@ -66,74 +66,90 @@ public class Main extends javax.swing.JFrame {
 
         jmBemVindo.setMnemonic('b');
         jmBemVindo.setText("Bem vindo");
-        jmBemVindo.setToolTipText("Sejá bem vindo!");
+        jmBemVindo.setToolTipText("Seja bem vindo!");
         jmbBarraMenu.add(jmBemVindo);
 
         jmArquivo.setMnemonic('A');
         jmArquivo.setText("Arquivo");
         jmArquivo.setToolTipText("Verificar conteúdo já cadastrado");
 
+        jmiPersonagens.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
         jmiPersonagens.setText("Personagens");
         jmiPersonagens.setToolTipText("");
         jmArquivo.add(jmiPersonagens);
 
+        jmiAntecedentes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
         jmiAntecedentes.setText("Antecedentes");
         jmArquivo.add(jmiAntecedentes);
 
+        jmiRacas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, 0));
         jmiRacas.setText("Raças");
         jmArquivo.add(jmiRacas);
 
+        jmiClasses.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
         jmiClasses.setText("Classes");
         jmArquivo.add(jmiClasses);
 
+        jmiHabilidades.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, 0));
         jmiHabilidades.setText("Habilidades");
         jmArquivo.add(jmiHabilidades);
 
+        jmiIdiomas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
         jmiIdiomas.setText("Idiomas");
         jmArquivo.add(jmiIdiomas);
 
-        jmItens.setText("Itens");
+        jmItens.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, 0));
+        jmItens.setText("Objetos");
         jmArquivo.add(jmItens);
 
+        jmiMateriais.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, 0));
         jmiMateriais.setText("Materiais");
         jmArquivo.add(jmiMateriais);
 
         jmbBarraMenu.add(jmArquivo);
 
-        jmCadastrar.setMnemonic('A');
+        jmCadastrar.setMnemonic('c');
         jmCadastrar.setText("Cadastrar");
         jmCadastrar.setToolTipText("Cadastrar conteúdo");
 
+        jmiCadPersonagem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
         jmiCadPersonagem.setText("Personagem");
         jmCadastrar.add(jmiCadPersonagem);
 
+        jmiCadAntecedente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
         jmiCadAntecedente.setText("Antecedente");
         jmCadastrar.add(jmiCadAntecedente);
 
+        jmiCadRaca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, 0));
         jmiCadRaca.setText("Raça");
         jmCadastrar.add(jmiCadRaca);
 
+        jmiCadClasse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
         jmiCadClasse.setText("Classe");
         jmCadastrar.add(jmiCadClasse);
 
+        jmiCadHabilidade.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, 0));
         jmiCadHabilidade.setText("Habilidade");
         jmCadastrar.add(jmiCadHabilidade);
 
+        jmiCadIdioma.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
         jmiCadIdioma.setText("Idioma");
         jmCadastrar.add(jmiCadIdioma);
 
-        jmiCadItem.setText("Item");
+        jmiCadItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, 0));
+        jmiCadItem.setText("Objeto");
         jmCadastrar.add(jmiCadItem);
 
+        jmiCadMaterial.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, 0));
         jmiCadMaterial.setText("Material");
         jmCadastrar.add(jmiCadMaterial);
 
         jmbBarraMenu.add(jmCadastrar);
 
-        jmConfig.setMnemonic('C');
-        jmConfig.setText("Configurações");
-        jmConfig.setToolTipText("Habilitar as configurações ");
-        jmbBarraMenu.add(jmConfig);
+        jmFatores.setMnemonic('f');
+        jmFatores.setText("Fatores");
+        jmFatores.setToolTipText("Modificar as configurações");
+        jmbBarraMenu.add(jmFatores);
 
         jmImport.setMnemonic('I');
         jmImport.setText("Importar");
@@ -195,29 +211,29 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jdpAreaDeTrabalho;
-    private javax.swing.JMenu jmArquivo;
-    private javax.swing.JMenu jmBemVindo;
-    private javax.swing.JMenu jmCadastrar;
-    private javax.swing.JMenu jmConfig;
-    private javax.swing.JMenu jmImport;
-    private javax.swing.JMenuItem jmItens;
-    private javax.swing.JMenu jmSobre;
-    private javax.swing.JMenuBar jmbBarraMenu;
-    private javax.swing.JMenuItem jmiAntecedentes;
-    private javax.swing.JMenuItem jmiCadAntecedente;
-    private javax.swing.JMenuItem jmiCadClasse;
-    private javax.swing.JMenuItem jmiCadHabilidade;
-    private javax.swing.JMenuItem jmiCadIdioma;
-    private javax.swing.JMenuItem jmiCadItem;
-    private javax.swing.JMenuItem jmiCadMaterial;
-    private javax.swing.JMenuItem jmiCadPersonagem;
-    private javax.swing.JMenuItem jmiCadRaca;
-    private javax.swing.JMenuItem jmiClasses;
-    private javax.swing.JMenuItem jmiHabilidades;
-    private javax.swing.JMenuItem jmiIdiomas;
-    private javax.swing.JMenuItem jmiMateriais;
-    private javax.swing.JMenuItem jmiPersonagens;
-    private javax.swing.JMenuItem jmiRacas;
+    javax.swing.JDesktopPane jdpAreaDeTrabalho;
+    javax.swing.JMenu jmArquivo;
+    javax.swing.JMenu jmBemVindo;
+    javax.swing.JMenu jmCadastrar;
+    javax.swing.JMenu jmFatores;
+    javax.swing.JMenu jmImport;
+    javax.swing.JMenuItem jmItens;
+    javax.swing.JMenu jmSobre;
+    javax.swing.JMenuBar jmbBarraMenu;
+    javax.swing.JMenuItem jmiAntecedentes;
+    javax.swing.JMenuItem jmiCadAntecedente;
+    javax.swing.JMenuItem jmiCadClasse;
+    javax.swing.JMenuItem jmiCadHabilidade;
+    javax.swing.JMenuItem jmiCadIdioma;
+    javax.swing.JMenuItem jmiCadItem;
+    javax.swing.JMenuItem jmiCadMaterial;
+    javax.swing.JMenuItem jmiCadPersonagem;
+    javax.swing.JMenuItem jmiCadRaca;
+    javax.swing.JMenuItem jmiClasses;
+    javax.swing.JMenuItem jmiHabilidades;
+    javax.swing.JMenuItem jmiIdiomas;
+    javax.swing.JMenuItem jmiMateriais;
+    javax.swing.JMenuItem jmiPersonagens;
+    javax.swing.JMenuItem jmiRacas;
     // End of variables declaration//GEN-END:variables
 }
