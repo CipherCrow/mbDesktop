@@ -1,5 +1,8 @@
 package view.gui;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JFrame;
 
 public class Main extends javax.swing.JFrame {
@@ -9,6 +12,10 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        
+        URL url = this.getClass().getResource("/assets/images/iconeMB.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
@@ -69,7 +76,7 @@ public class Main extends javax.swing.JFrame {
         jmbBarraMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jmbBarraMenu.setMargin(new java.awt.Insets(1, 0, 1, 0));
 
-        jmBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/iconeMB.png"))); // NOI18N
+        jmBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/menu/icons8-handshake-heart-35.png"))); // NOI18N
         jmBemVindo.setMnemonic('b');
         jmBemVindo.setText("Bem vindo");
         jmBemVindo.setToolTipText("Seja bem vindo!");
