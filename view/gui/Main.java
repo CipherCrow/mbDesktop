@@ -39,6 +39,7 @@ public class Main extends javax.swing.JFrame {
         jmbBarraMenu = new javax.swing.JMenuBar();
         jmArquivo = new javax.swing.JMenu();
         jmiPersonagens = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jmiAntecedentes = new javax.swing.JMenuItem();
         jmiRacas = new javax.swing.JMenuItem();
         jmiClasses = new javax.swing.JMenuItem();
@@ -49,6 +50,7 @@ public class Main extends javax.swing.JFrame {
         jmiMateriais = new javax.swing.JMenuItem();
         jmCadastrar = new javax.swing.JMenu();
         jmiCadPersonagem = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jmiCadAntecedente = new javax.swing.JMenuItem();
         jmiCadRaca = new javax.swing.JMenuItem();
         jmiCadClasse = new javax.swing.JMenuItem();
@@ -93,6 +95,7 @@ public class Main extends javax.swing.JFrame {
         jmiPersonagens.setText("Personagens");
         jmiPersonagens.setToolTipText("");
         jmArquivo.add(jmiPersonagens);
+        jmArquivo.add(jSeparator1);
 
         jmiAntecedentes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
         jmiAntecedentes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-farmer-20.png"))); // NOI18N
@@ -146,6 +149,7 @@ public class Main extends javax.swing.JFrame {
         jmiCadPersonagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-person-20(1).png"))); // NOI18N
         jmiCadPersonagem.setText("Personagem");
         jmCadastrar.add(jmiCadPersonagem);
+        jmCadastrar.add(jSeparator2);
 
         jmiCadAntecedente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
         jmiCadAntecedente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-farmer-20(1).png"))); // NOI18N
@@ -260,6 +264,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    javax.swing.JPopupMenu.Separator jSeparator1;
+    javax.swing.JPopupMenu.Separator jSeparator2;
     javax.swing.JDesktopPane jdpAreaDeTrabalho;
     javax.swing.JMenu jmArquivo;
     javax.swing.JMenu jmCadastrar;
