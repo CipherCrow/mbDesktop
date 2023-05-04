@@ -26,7 +26,7 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jpDescricao = new javax.swing.JPanel();
         jpImagem = new javax.swing.JPanel();
         jspTextoScroll = new javax.swing.JScrollPane();
         jtpTextoDescricao = new javax.swing.JTextPane();
@@ -42,7 +42,7 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Modelo de Arquivo");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Modelo - Descrição"));
+        jpDescricao.setBorder(javax.swing.BorderFactory.createTitledBorder("Modelo - Descrição"));
 
         jpImagem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jpImagem.setPreferredSize(new java.awt.Dimension(160, 160));
@@ -65,26 +65,26 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
         jbDetalhe.setMnemonic('d');
         jbDetalhe.setText("Detalhes");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpDescricaoLayout = new javax.swing.GroupLayout(jpDescricao);
+        jpDescricao.setLayout(jpDescricaoLayout);
+        jpDescricaoLayout.setHorizontalGroup(
+            jpDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpDescricaoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jspTextoScroll)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpDescricaoLayout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(jpImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(70, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpDescricaoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbDetalhe, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jpDescricaoLayout.setVerticalGroup(
+            jpDescricaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpDescricaoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -123,18 +123,15 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
         jpCamposDeFiltroLayout.setHorizontalGroup(
             jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpCamposDeFiltroLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpCamposDeFiltroLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpCamposDeFiltroLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jbFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbRemoverFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(8, Short.MAX_VALUE))
+                        .addComponent(jbRemoverFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpCamposDeFiltroLayout.setVerticalGroup(
             jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,12 +157,12 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
                     .addComponent(jpCamposDeFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jspPainelDeScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpCamposDeFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -180,11 +177,11 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbDetalhe;
     private javax.swing.JButton jbFiltrar;
     private javax.swing.JButton jbRemoverFiltros;
     private javax.swing.JPanel jpCamposDeFiltro;
+    private javax.swing.JPanel jpDescricao;
     private javax.swing.JPanel jpImagem;
     private javax.swing.JScrollPane jspPainelDeScroll;
     private javax.swing.JScrollPane jspTextoScroll;

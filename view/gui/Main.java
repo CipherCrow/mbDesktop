@@ -16,6 +16,13 @@ public class Main extends javax.swing.JFrame {
         URL url = this.getClass().getResource("/assets/images/iconeMB.png");
         Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(imagemTitulo);
+        
+        BoasVindas mAparesentacao = new BoasVindas();
+        mAparesentacao.setVisible(true);
+        
+        jdpAreaDeTrabalho.add(mAparesentacao);
+        mAparesentacao.requestFocusInWindow();
+        mAparesentacao.requestFocus();
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
@@ -30,7 +37,6 @@ public class Main extends javax.swing.JFrame {
 
         jdpAreaDeTrabalho = new javax.swing.JDesktopPane();
         jmbBarraMenu = new javax.swing.JMenuBar();
-        jmBemVindo = new javax.swing.JMenu();
         jmArquivo = new javax.swing.JMenu();
         jmiPersonagens = new javax.swing.JMenuItem();
         jmiAntecedentes = new javax.swing.JMenuItem();
@@ -75,13 +81,6 @@ public class Main extends javax.swing.JFrame {
 
         jmbBarraMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jmbBarraMenu.setMargin(new java.awt.Insets(1, 0, 1, 0));
-
-        jmBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/menu/icons8-handshake-heart-35.png"))); // NOI18N
-        jmBemVindo.setMnemonic('b');
-        jmBemVindo.setText("Bem vindo");
-        jmBemVindo.setToolTipText("Seja bem vindo!");
-        jmBemVindo.setMargin(new java.awt.Insets(3, 6, 4, 6));
-        jmbBarraMenu.add(jmBemVindo);
 
         jmArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/menu/icons8-search-folder-35.png"))); // NOI18N
         jmArquivo.setMnemonic('A');
@@ -263,7 +262,6 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JDesktopPane jdpAreaDeTrabalho;
     javax.swing.JMenu jmArquivo;
-    javax.swing.JMenu jmBemVindo;
     javax.swing.JMenu jmCadastrar;
     javax.swing.JMenu jmFatores;
     javax.swing.JMenu jmImport;

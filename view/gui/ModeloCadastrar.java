@@ -9,14 +9,14 @@ package view.gui;
  * @author Administrador
  */
 public class ModeloCadastrar extends javax.swing.JInternalFrame {
-
+       
     /**
      * Creates new form ModeloCadastrar
      */
     public ModeloCadastrar() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
