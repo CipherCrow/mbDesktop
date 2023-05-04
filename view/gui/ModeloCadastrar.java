@@ -66,18 +66,23 @@ public class ModeloCadastrar extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jbNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-plus-20.png"))); // NOI18N
         jbNovo.setMnemonic('n');
         jbNovo.setText("Novo");
 
+        jbAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-create-20.png"))); // NOI18N
         jbAlterar.setMnemonic('a');
         jbAlterar.setText("Alterar");
 
+        jbDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-trash-20.png"))); // NOI18N
         jbDeletar.setMnemonic('d');
         jbDeletar.setText("Deletar");
 
+        jbSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-checkmark-25.png"))); // NOI18N
         jbSalvar.setMnemonic('s');
         jbSalvar.setText("Salvar");
 
+        jbCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-cancel-25.png"))); // NOI18N
         jbCancelar.setMnemonic('c');
         jbCancelar.setText("Cancelar");
 
@@ -92,7 +97,7 @@ public class ModeloCadastrar extends javax.swing.JInternalFrame {
                 .addComponent(jbAlterar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbDeletar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
