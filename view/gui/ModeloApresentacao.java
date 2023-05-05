@@ -4,24 +4,17 @@
  */
 package view.gui;
 
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
-
 /**
  *
  * @author Administrador
  */
 public class ModeloApresentacao extends javax.swing.JInternalFrame {
-    JLabel img;
-    JTextArea texto;
-    
+
     /**
      * Creates new form ModeloApresentacao
      */
     public ModeloApresentacao() {
         initComponents();
-        img = this.jlImagem;
-        texto = this.jtTextoApresentacao;
     }
 
     /**
@@ -93,8 +86,8 @@ public class ModeloApresentacao extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jlImagem;
+    public javax.swing.JLabel jlImagem;
     private javax.swing.JPanel jpImagens;
-    private javax.swing.JTextArea jtTextoApresentacao;
+    public javax.swing.JTextArea jtTextoApresentacao;
     // End of variables declaration//GEN-END:variables
 }

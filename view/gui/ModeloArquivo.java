@@ -8,7 +8,7 @@ package view.gui;
  *
  * @author Administrador
  */
-public class ModeloArquivo extends javax.swing.JInternalFrame {
+public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form IfModeloArquivo
@@ -62,6 +62,7 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
         jtpTextoDescricao.setText("Aqui ficará o texto formatado de descrição");
         jspTextoScroll.setViewportView(jtpTextoDescricao);
 
+        jbDetalhe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/arquivo/icons8-info-25.png"))); // NOI18N
         jbDetalhe.setMnemonic('d');
         jbDetalhe.setText("Detalhes");
 
@@ -112,9 +113,11 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Nome");
 
+        jbRemoverFiltros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/arquivo/icons8-filter-25(1).png"))); // NOI18N
         jbRemoverFiltros.setMnemonic('r');
         jbRemoverFiltros.setText("Remover Filtros");
 
+        jbFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/arquivo/icons8-filter-25.png"))); // NOI18N
         jbFiltrar.setMnemonic('f');
         jbFiltrar.setText("Filtrar");
 
@@ -180,13 +183,13 @@ public class ModeloArquivo extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbDetalhe;
     private javax.swing.JButton jbFiltrar;
     private javax.swing.JButton jbRemoverFiltros;
-    private javax.swing.JPanel jpCamposDeFiltro;
-    private javax.swing.JPanel jpDescricao;
-    private javax.swing.JPanel jpImagem;
-    private javax.swing.JScrollPane jspPainelDeScroll;
+    public javax.swing.JPanel jpCamposDeFiltro;
+    public javax.swing.JPanel jpDescricao;
+    public javax.swing.JPanel jpImagem;
+    public javax.swing.JScrollPane jspPainelDeScroll;
     private javax.swing.JScrollPane jspTextoScroll;
     private javax.swing.JTable jtTabela;
     private javax.swing.JTextField jtfNome;
-    private javax.swing.JTextPane jtpTextoDescricao;
+    public javax.swing.JTextPane jtpTextoDescricao;
     // End of variables declaration//GEN-END:variables
 }

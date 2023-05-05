@@ -135,6 +135,11 @@ public class Main extends javax.swing.JFrame {
         jmiMateriais.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, 0));
         jmiMateriais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-medieval-20.png"))); // NOI18N
         jmiMateriais.setText("Materiais");
+        jmiMateriais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiMateriaisActionPerformed(evt);
+            }
+        });
         jmArquivo.add(jmiMateriais);
 
         jmbBarraMenu.add(jmArquivo);
@@ -189,6 +194,11 @@ public class Main extends javax.swing.JFrame {
         jmiCadMaterial.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, 0));
         jmiCadMaterial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-medieval-20(1).png"))); // NOI18N
         jmiCadMaterial.setText("Material");
+        jmiCadMaterial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCadMaterialActionPerformed(evt);
+            }
+        });
         jmCadastrar.add(jmiCadMaterial);
 
         jmbBarraMenu.add(jmCadastrar);
@@ -230,6 +240,20 @@ public class Main extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1296, 788));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmiCadMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadMaterialActionPerformed
+        CadastroMaterial cadMaterial = new CadastroMaterial();
+        cadMaterial.setVisible(true);
+        
+        jdpAreaDeTrabalho.add(cadMaterial);
+    }//GEN-LAST:event_jmiCadMaterialActionPerformed
+
+    private void jmiMateriaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMateriaisActionPerformed
+        ArquivoMaterial telaMaterial = new ArquivoMaterial();
+        telaMaterial.setVisible(true);
+        
+        jdpAreaDeTrabalho.add(telaMaterial);
+    }//GEN-LAST:event_jmiMateriaisActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
