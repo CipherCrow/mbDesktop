@@ -97,13 +97,10 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
 
         jtTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
-                "Title 1"
+
             }
         ));
         jtTabela.setEnabled(false);
@@ -143,7 +140,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbRemoverFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -170,7 +167,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jpCamposDeFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jspPainelDeScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jspPainelDeScroll)
                 .addContainerGap())
         );
 
@@ -188,7 +185,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
     public javax.swing.JPanel jpImagem;
     public javax.swing.JScrollPane jspPainelDeScroll;
     private javax.swing.JScrollPane jspTextoScroll;
-    private javax.swing.JTable jtTabela;
+    public javax.swing.JTable jtTabela;
     private javax.swing.JTextField jtfNome;
     public javax.swing.JTextPane jtpTextoDescricao;
     // End of variables declaration//GEN-END:variables
