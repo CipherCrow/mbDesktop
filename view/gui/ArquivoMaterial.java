@@ -1,11 +1,10 @@
 package view.gui;
 
 import controller.ConfiguracaoController;
-import model.entities.MaterialItem;
 
 public class ArquivoMaterial extends ModeloArquivo{
     public ArquivoMaterial(){  
-        
+
         resetarTituloIcone("Materiais Cadastrados",
                            "/assets/images/submenu/icons8-medieval-20.png");
         
@@ -15,22 +14,7 @@ public class ArquivoMaterial extends ModeloArquivo{
             "Nome", "Custo*" ,"Dano*","Dano+", "FN+"
         };
         
-        String tela = "Material";
-        
-        try {
-            MaterialItem [][] materiaisCarregados = {ConfiguracaoController.carregarMateriais()};
-            
-            resetarTabela( materiaisCarregados, colunas );
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            
-            //Preenche a tabela com mensagem de vazio de hou
-            resetarTabela( 
-                new Object [][] {{"Ainda não existe nem um(a) "+ tela +" forjado(a)"}}
-                , new String[]{"Mensagem de Hou:"}
-                    );
-        }
-            
+        resetarTabela(colunas,"material");      
     }
 
     public void resetarTituloIcone(String titulo, String caminhoIcone){
@@ -43,7 +27,27 @@ public class ArquivoMaterial extends ModeloArquivo{
         jtpTextoDescricao.setText("");
     }
     
-    public void resetarTabela(Object[][] objeto, String[] colunas){
-        jtTabela.setModel(new javax.swing.table.DefaultTableModel( objeto, colunas ));
+    public void resetarTabela(String[] colunas, String tabela){
+        ConfiguracaoController controller = new ConfiguracaoController();
+         
+        try { 
+            controller.carregarMateriais(colunas, jtTabela);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            
+            //Preenche a tabela com mensagem de vazio de hou
+            nenhumResultadoCadastrado(tabela);
+        }   
+    }
+    
+    public void nenhumResultadoEncontrado(){
+        //nothing
+    }
+    
+    public void nenhumResultadoCadastrado(String texto){
+        jtTabela.setModel(new javax.swing.table.DefaultTableModel( 
+            new Object [][] {{"Ainda não existe nem um(a) " + texto + " forjado(a)"}}
+          , new String[]{"Mensagem de Hou:"}
+        ));
     }
 }

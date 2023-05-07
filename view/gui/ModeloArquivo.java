@@ -103,7 +103,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
 
             }
         ));
-        jtTabela.setEnabled(false);
+        jtTabela.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jspPainelDeScroll.setViewportView(jtTabela);
 
         jpCamposDeFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
