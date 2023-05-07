@@ -90,49 +90,49 @@ public class Main extends javax.swing.JFrame {
         jmArquivo.setToolTipText("Verificar conteúdo já cadastrado");
         jmArquivo.setMargin(new java.awt.Insets(4, 6, 4, 6));
 
-        jmiPersonagens.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
+        jmiPersonagens.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiPersonagens.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-person-20.png"))); // NOI18N
         jmiPersonagens.setText("Personagens");
         jmiPersonagens.setToolTipText("");
         jmArquivo.add(jmiPersonagens);
         jmArquivo.add(jSeparator1);
 
-        jmiAntecedentes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
+        jmiAntecedentes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiAntecedentes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-farmer-20.png"))); // NOI18N
         jmiAntecedentes.setText("Antecedentes");
         jmArquivo.add(jmiAntecedentes);
 
-        jmiRacas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, 0));
+        jmiRacas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiRacas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-fursona-20+1.png"))); // NOI18N
         jmiRacas.setText("Raças");
         jmArquivo.add(jmiRacas);
 
-        jmiClasses.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
+        jmiClasses.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiClasses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-warrior-20.png"))); // NOI18N
         jmiClasses.setText("Classes");
         jmArquivo.add(jmiClasses);
 
-        jmiCaminhos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, 0));
+        jmiCaminhos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCaminhos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-purposeful-woman-20.png"))); // NOI18N
         jmiCaminhos.setText("Caminhos");
         jmArquivo.add(jmiCaminhos);
 
-        jmiHabilidades.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, 0));
+        jmiHabilidades.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiHabilidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-book-20.png"))); // NOI18N
         jmiHabilidades.setText("Habilidades");
         jmArquivo.add(jmiHabilidades);
 
-        jmiIdiomas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
+        jmiIdiomas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiIdiomas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-spoken-20.png"))); // NOI18N
         jmiIdiomas.setText("Idiomas");
         jmArquivo.add(jmiIdiomas);
 
-        jmItens.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, 0));
+        jmItens.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmItens.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-cheap-20.png"))); // NOI18N
         jmItens.setText("Objetos");
         jmArquivo.add(jmItens);
 
-        jmiMateriais.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, 0));
+        jmiMateriais.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiMateriais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-medieval-20.png"))); // NOI18N
         jmiMateriais.setText("Materiais");
         jmiMateriais.addActionListener(new java.awt.event.ActionListener() {
@@ -150,48 +150,48 @@ public class Main extends javax.swing.JFrame {
         jmCadastrar.setToolTipText("Cadastrar conteúdo");
         jmCadastrar.setMargin(new java.awt.Insets(4, 6, 4, 6));
 
-        jmiCadPersonagem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
+        jmiCadPersonagem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadPersonagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-person-20(1).png"))); // NOI18N
         jmiCadPersonagem.setText("Personagem");
         jmCadastrar.add(jmiCadPersonagem);
         jmCadastrar.add(jSeparator2);
 
-        jmiCadAntecedente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
+        jmiCadAntecedente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadAntecedente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-farmer-20(1).png"))); // NOI18N
         jmiCadAntecedente.setText("Antecedente");
         jmCadastrar.add(jmiCadAntecedente);
 
-        jmiCadRaca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, 0));
+        jmiCadRaca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadRaca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-fursona-20.png"))); // NOI18N
         jmiCadRaca.setText("Raça");
         jmCadastrar.add(jmiCadRaca);
 
-        jmiCadClasse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
+        jmiCadClasse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadClasse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-warrior-20+1.png"))); // NOI18N
         jmiCadClasse.setText("Classe");
         jmCadastrar.add(jmiCadClasse);
 
-        jmiCadCaminho.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, 0));
+        jmiCadCaminho.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadCaminho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-purposeful-woman-20(1).png"))); // NOI18N
         jmiCadCaminho.setText("Caminho");
         jmCadastrar.add(jmiCadCaminho);
 
-        jmiCadHabilidade.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, 0));
+        jmiCadHabilidade.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadHabilidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-book-20(1).png"))); // NOI18N
         jmiCadHabilidade.setText("Habilidade");
         jmCadastrar.add(jmiCadHabilidade);
 
-        jmiCadIdioma.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
+        jmiCadIdioma.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadIdioma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-spoken-20(1).png"))); // NOI18N
         jmiCadIdioma.setText("Idioma");
         jmCadastrar.add(jmiCadIdioma);
 
-        jmiCadItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, 0));
+        jmiCadItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-cheap-20+1.png"))); // NOI18N
         jmiCadItem.setText("Objeto");
         jmCadastrar.add(jmiCadItem);
 
-        jmiCadMaterial.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, 0));
+        jmiCadMaterial.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadMaterial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-medieval-20(1).png"))); // NOI18N
         jmiCadMaterial.setText("Material");
         jmiCadMaterial.addActionListener(new java.awt.event.ActionListener() {

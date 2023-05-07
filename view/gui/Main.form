@@ -28,7 +28,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiPersonagens">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="P"/>
+                  <KeyStroke key="Ctrl+Alt+P"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-person-20.png"/>
@@ -42,7 +42,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiAntecedentes">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="A"/>
+                  <KeyStroke key="Ctrl+Alt+A"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-farmer-20.png"/>
@@ -53,7 +53,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiRacas">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="R"/>
+                  <KeyStroke key="Ctrl+Alt+R"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-fursona-20+1.png"/>
@@ -64,7 +64,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiClasses">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="C"/>
+                  <KeyStroke key="Ctrl+Alt+C"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-warrior-20.png"/>
@@ -75,7 +75,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCaminhos">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="K"/>
+                  <KeyStroke key="Ctrl+Alt+K"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-purposeful-woman-20.png"/>
@@ -86,7 +86,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiHabilidades">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="H"/>
+                  <KeyStroke key="Ctrl+Alt+H"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-book-20.png"/>
@@ -97,7 +97,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiIdiomas">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="I"/>
+                  <KeyStroke key="Ctrl+Alt+I"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-spoken-20.png"/>
@@ -108,7 +108,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmItens">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="O"/>
+                  <KeyStroke key="Ctrl+Alt+O"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-cheap-20.png"/>
@@ -119,7 +119,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiMateriais">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="M"/>
+                  <KeyStroke key="Ctrl+Alt+M"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-medieval-20.png"/>
@@ -148,7 +148,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadPersonagem">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="P"/>
+                  <KeyStroke key="Shift+Ctrl+P"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-person-20(1).png"/>
@@ -161,7 +161,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadAntecedente">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="A"/>
+                  <KeyStroke key="Shift+Ctrl+A"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-farmer-20(1).png"/>
@@ -172,7 +172,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadRaca">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="R"/>
+                  <KeyStroke key="Shift+Ctrl+R"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-fursona-20.png"/>
@@ -183,7 +183,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadClasse">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="C"/>
+                  <KeyStroke key="Shift+Ctrl+C"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-warrior-20+1.png"/>
@@ -194,7 +194,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadCaminho">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="K"/>
+                  <KeyStroke key="Shift+Ctrl+K"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-purposeful-woman-20(1).png"/>
@@ -205,7 +205,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadHabilidade">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="H"/>
+                  <KeyStroke key="Shift+Ctrl+H"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-book-20(1).png"/>
@@ -216,7 +216,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadIdioma">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="I"/>
+                  <KeyStroke key="Shift+Ctrl+I"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-spoken-20(1).png"/>
@@ -227,7 +227,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadItem">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="O"/>
+                  <KeyStroke key="Shift+Ctrl+O"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-cheap-20+1.png"/>
@@ -238,7 +238,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadMaterial">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="M"/>
+                  <KeyStroke key="Shift+Ctrl+M"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/assets/images/submenu/icons8-medieval-20(1).png"/>

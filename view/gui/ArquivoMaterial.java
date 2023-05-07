@@ -1,6 +1,6 @@
 package view.gui;
 
-import controller.ConfiguracaoController;
+import controller.MateriaisController;
 
 public class ArquivoMaterial extends ModeloArquivo{
     public ArquivoMaterial(){  
@@ -28,12 +28,12 @@ public class ArquivoMaterial extends ModeloArquivo{
     }
     
     public void resetarTabela(String[] colunas, String tabela){
-        ConfiguracaoController controller = new ConfiguracaoController();
+        MateriaisController controller = new MateriaisController();
          
         try { 
             controller.carregarMateriais(colunas, jtTabela);
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.err.println(ex.getMessage());
             
             //Preenche a tabela com mensagem de vazio de hou
             nenhumResultadoCadastrado(tabela);

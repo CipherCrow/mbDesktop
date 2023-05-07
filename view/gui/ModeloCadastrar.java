@@ -8,7 +8,7 @@ package view.gui;
  *
  * @author Administrador
  */
-public class ModeloCadastrar extends javax.swing.JInternalFrame {
+public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
        
     /**
      * Creates new form ModeloCadastrar
@@ -17,6 +17,31 @@ public class ModeloCadastrar extends javax.swing.JInternalFrame {
         initComponents();
     }
     
+    public void resetarTituloIcone(String titulo, String caminhoIcone){
+        setTitle(titulo);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource(caminhoIcone)));
+    }
+    
+    public void iniciarCadastro(){
+        jbNovo.setEnabled(false);
+        jbSalvar.setEnabled(true);
+        jbCancelar.setEnabled(true);
+        
+        habilitarCampos(true);
+    }
+    
+    public void cancelarCadastro(){
+        jbNovo.setEnabled(true);
+        jbSalvar.setEnabled(false);
+        jbCancelar.setEnabled(false);
+        
+        habilitarCampos(false);
+        limparCampos();
+    }
+    
+    public abstract void habilitarCampos(boolean logica);
+    public abstract void limparCampos();
+    public abstract void salvarMaterial(String modo);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,6 +68,8 @@ public class ModeloCadastrar extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Nome");
 
+        jtfNome.setEnabled(false);
+
         javax.swing.GroupLayout jpCamposDeFiltroLayout = new javax.swing.GroupLayout(jpCamposDeFiltro);
         jpCamposDeFiltro.setLayout(jpCamposDeFiltroLayout);
         jpCamposDeFiltroLayout.setHorizontalGroup(
@@ -50,8 +77,8 @@ public class ModeloCadastrar extends javax.swing.JInternalFrame {
             .addGroup(jpCamposDeFiltroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpCamposDeFiltroLayout.setVerticalGroup(
@@ -69,22 +96,41 @@ public class ModeloCadastrar extends javax.swing.JInternalFrame {
         jbNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-plus-20.png"))); // NOI18N
         jbNovo.setMnemonic('n');
         jbNovo.setText("Novo");
+        jbNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNovoActionPerformed(evt);
+            }
+        });
 
         jbAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-create-20.png"))); // NOI18N
         jbAlterar.setMnemonic('a');
         jbAlterar.setText("Alterar");
+        jbAlterar.setEnabled(false);
 
         jbDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-trash-20.png"))); // NOI18N
         jbDeletar.setMnemonic('d');
         jbDeletar.setText("Deletar");
+        jbDeletar.setEnabled(false);
 
         jbSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-checkmark-25.png"))); // NOI18N
         jbSalvar.setMnemonic('s');
         jbSalvar.setText("Salvar");
+        jbSalvar.setEnabled(false);
+        jbSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalvarActionPerformed(evt);
+            }
+        });
 
         jbCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-cancel-25.png"))); // NOI18N
         jbCancelar.setMnemonic('c');
         jbCancelar.setText("Cancelar");
+        jbCancelar.setEnabled(false);
+        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -140,16 +186,29 @@ public class ModeloCadastrar extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
+        iniciarCadastro();
+    }//GEN-LAST:event_jbNovoActionPerformed
+
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
+        cancelarCadastro();
+    }//GEN-LAST:event_jbCancelarActionPerformed
+
+    
+    private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
+        salvarMaterial("Salvar");
+    }//GEN-LAST:event_jbSalvarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbAlterar;
-    private javax.swing.JButton jbCancelar;
-    private javax.swing.JButton jbDeletar;
-    private javax.swing.JButton jbNovo;
-    private javax.swing.JButton jbSalvar;
-    private javax.swing.JPanel jpCamposDeFiltro;
-    private javax.swing.JTextField jtfNome;
+    public javax.swing.JButton jbAlterar;
+    public javax.swing.JButton jbCancelar;
+    public javax.swing.JButton jbDeletar;
+    public javax.swing.JButton jbNovo;
+    public javax.swing.JButton jbSalvar;
+    public javax.swing.JPanel jpCamposDeFiltro;
+    public javax.swing.JTextField jtfNome;
     // End of variables declaration//GEN-END:variables
 }
