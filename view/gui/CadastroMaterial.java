@@ -2,6 +2,7 @@ package view.gui;
 
 import controller.Controller;
 import controller.MateriaisController;
+import java.awt.Dimension;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -13,41 +14,53 @@ public class CadastroMaterial extends ModeloCadastrar {
     public JLabel jlCusto, jlDanoMultiplicavel, jlDanoAdicional, jlFn,  jlPesoMultiplicador;
     
     public CadastroMaterial(){
-      
+        Dimension grande = new Dimension(200, 28);
+        Dimension pequeno = new Dimension(60, 28);
+        
         resetarTituloIcone(
                 "Cadastrar Material"
                ,"/assets/images/submenu/icons8-medieval-20(1).png");
         
+        jtfNome.setPreferredSize(grande);
+        
         jlCusto = new JLabel("Custo (*)");       
         jtfCusto = new JTextField();
+        jtfCusto.setPreferredSize(pequeno);
         
         jlDanoMultiplicavel = new JLabel("Dano (*)");       
         jtfDanoMultiplicavel = new JTextField();
+        jtfDanoMultiplicavel.setPreferredSize(pequeno);
         
         jlDanoAdicional = new JLabel("Dano (+)");       
         jtfDanoAdicional = new JTextField();
+        jtfDanoAdicional.setPreferredSize(pequeno);
         
         jlFn = new JLabel("Fn (+)");       
         jtfFn = new JTextField();
+        jtfFn.setPreferredSize(pequeno);
         
         jlPesoMultiplicador = new JLabel("Peso (*)");       
         jtfPesoMultiplicador = new JTextField();
+        jtfPesoMultiplicador.setPreferredSize(pequeno);
         
-        jpCamposDeFiltro.add(jlCusto).setBounds(215, 0, 50, 30);
-        jpCamposDeFiltro.add(jtfCusto).setBounds(212, 30, 50, 28);
+        jpCamposDeFiltro.add(jlCusto);
+        jpCamposDeFiltro.add(jtfCusto);
         
-        jpCamposDeFiltro.add(jlDanoMultiplicavel).setBounds(270, 0, 50, 30);
-        jpCamposDeFiltro.add(jtfDanoMultiplicavel).setBounds(267, 30, 50, 28);
+        jpCamposDeFiltro.add(jlDanoMultiplicavel);
+        jpCamposDeFiltro.add(jtfDanoMultiplicavel);
         
-        jpCamposDeFiltro.add(jlDanoAdicional).setBounds(325, 0, 50, 30);
-        jpCamposDeFiltro.add(jtfDanoAdicional).setBounds(322, 30, 50, 28);
+        jpCamposDeFiltro.add(jlDanoAdicional);
+        jpCamposDeFiltro.add(jtfDanoAdicional);
         
-        jpCamposDeFiltro.add(jlFn).setBounds(380, 0, 50, 30);
-        jpCamposDeFiltro.add(jtfFn).setBounds(377, 30, 50, 28);
+        jpCamposDeFiltro.add(jlFn);
+        jpCamposDeFiltro.add(jtfFn);
         
-        jpCamposDeFiltro.add(jlPesoMultiplicador).setBounds(435, 0, 50, 30);
-        jpCamposDeFiltro.add(jtfPesoMultiplicador).setBounds(432, 30, 50, 28);
+        jpCamposDeFiltro.add(jlPesoMultiplicador);
+        jpCamposDeFiltro.add(jtfPesoMultiplicador);
   
+        jpCamposDeFiltro.revalidate();
+        jpCamposDeFiltro.repaint();
+        
         habilitarCampos(false);
         
     } 
@@ -94,7 +107,7 @@ public class CadastroMaterial extends ModeloCadastrar {
             limparCampos();
         }catch(Exception e){
             System.err.println( e.getMessage() );
-            JOptionPane.showMessageDialog(null, "Valor vazio ou inválido", "Erro ao Salvar", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar", JOptionPane.ERROR_MESSAGE);
         }
         
     }

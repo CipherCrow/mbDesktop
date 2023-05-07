@@ -56,6 +56,7 @@ public class ModeloApresentacao extends javax.swing.JInternalFrame {
         jtTextoApresentacao.setToolTipText("");
         jtTextoApresentacao.setWrapStyleWord(true);
         jtTextoApresentacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jtTextoApresentacao.setPreferredSize(null);
         jtTextoApresentacao.setSelectionColor(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -68,7 +69,7 @@ public class ModeloApresentacao extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jtTextoApresentacao)
+                .addComponent(jtTextoApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
@@ -77,8 +78,8 @@ public class ModeloApresentacao extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jpImagens, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtTextoApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addComponent(jtTextoApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();

@@ -63,39 +63,24 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Modelo Salvar e Alterar");
+        setPreferredSize(null);
 
         jpCamposDeFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpCamposDeFiltro.setPreferredSize(null);
+        jpCamposDeFiltro.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 10));
 
         jLabel1.setText("Nome");
+        jpCamposDeFiltro.add(jLabel1);
 
         jtfNome.setEnabled(false);
-
-        javax.swing.GroupLayout jpCamposDeFiltroLayout = new javax.swing.GroupLayout(jpCamposDeFiltro);
-        jpCamposDeFiltro.setLayout(jpCamposDeFiltroLayout);
-        jpCamposDeFiltroLayout.setHorizontalGroup(
-            jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpCamposDeFiltroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpCamposDeFiltroLayout.setVerticalGroup(
-            jpCamposDeFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpCamposDeFiltroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
-        );
+        jpCamposDeFiltro.add(jtfNome);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jbNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-plus-20.png"))); // NOI18N
         jbNovo.setMnemonic('n');
         jbNovo.setText("Novo");
+        jbNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbNovoActionPerformed(evt);
@@ -115,6 +100,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         jbSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-checkmark-25.png"))); // NOI18N
         jbSalvar.setMnemonic('s');
         jbSalvar.setText("Salvar");
+        jbSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbSalvar.setEnabled(false);
         jbSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,8 +165,8 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addComponent(jpCamposDeFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpCamposDeFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
