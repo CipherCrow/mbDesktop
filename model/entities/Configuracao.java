@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Configuracao {
 
     private static final ArrayList<Conteudo> conteudos = new ArrayList<>();
-    
+      
     public static void mudarEstadoMaterial(String nome) {
         Configuracao.conteudos.forEach(conteudo -> {
             if (conteudo.getNome().equals(nome)) {
@@ -20,7 +20,7 @@ public class Configuracao {
         //Problema futuro se continuar usando ArrayList
         for (int temp = 0; temp < Configuracao.conteudos.size(); temp++) {
             Conteudo atual = Configuracao.conteudos.get(temp);
-            if (atual.equals(nome)) {
+            if (atual.getNome().equals(nome)) {
                 encontrado = atual;
                 break;
             }
@@ -45,7 +45,7 @@ public class Configuracao {
            return null; 
         }
         
-        ArrayList<MaterialItem> materiaisCadastrados = new ArrayList<MaterialItem>();
+        ArrayList<MaterialItem> materiaisCadastrados = new ArrayList<>();
         
         //Problema futuro se continuar usando ArrayList
         for (int temp = 0; temp < Configuracao.conteudos.size(); temp++) {

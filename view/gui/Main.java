@@ -1,9 +1,12 @@
 package view.gui;
 
+import controller.GerenciadorDeTelas;
+import java.awt.Component;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
-import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
 
@@ -12,7 +15,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        
+               
         URL url = this.getClass().getResource("/assets/images/iconeMB.png");
         Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(imagemTitulo);
@@ -26,6 +29,33 @@ public class Main extends javax.swing.JFrame {
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
+    public void abrirJanela(JInternalFrame janela){
+        try{ 
+            Component[] componentes = jdpAreaDeTrabalho.getComponents();
+            boolean jaExisteComponente = false;
+            
+            for(int i=0; i < jdpAreaDeTrabalho.getComponentCount(); i++){
+                //Se for o mesmo componente e a janela não estiver visivel significa que foi fechada, portanto:
+                if (componentes[i].equals( janela )){
+                    jaExisteComponente = true;
+                }
+            }
+            
+            if(jaExisteComponente){
+                janela.setClosed(false);
+            }else{
+                jdpAreaDeTrabalho.add( janela );
+            }
+            
+            janela.setVisible(true);
+            janela.setSelected(true);
+            
+        }catch(Exception e){
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao Tentar Abrir a Janela"+ janela.getTitle() +"!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }          
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -242,17 +272,11 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCadMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadMaterialActionPerformed
-        CadastroMaterial cadMaterial = new CadastroMaterial();
-        cadMaterial.setVisible(true);
-        
-        jdpAreaDeTrabalho.add(cadMaterial);
+        abrirJanela(GerenciadorDeTelas.getCadMaterial());
     }//GEN-LAST:event_jmiCadMaterialActionPerformed
 
     private void jmiMateriaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMateriaisActionPerformed
-        ArquivoMaterial telaMaterial = new ArquivoMaterial();
-        telaMaterial.setVisible(true);
-        
-        jdpAreaDeTrabalho.add(telaMaterial);
+        abrirJanela(GerenciadorDeTelas.getArqMaterial());
     }//GEN-LAST:event_jmiMateriaisActionPerformed
 
     public static void main(String args[]) {

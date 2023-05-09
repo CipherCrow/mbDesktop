@@ -7,16 +7,16 @@ public class Conteudo {
 
     private String nome;
     private ConteudoStatusEnum status = ConteudoStatusEnum.Ativado;
-    private ArrayList<Caminho> caminhos;
-    private ArrayList<Raca> racas;
-    private ArrayList<Classe> classes;
-    private ArrayList<Habilidade> habilidade;
-    private ArrayList<Item> items;
-    private ArrayList<Organizacao> organizacoes;
-    private ArrayList<MaterialItem> materiaisItens;
-    private ArrayList<Antecedente> antecedente;
-    private ArrayList<Idioma> idiomas; 
-    private ArrayList<Habilidade> habilidadesExtras;
+    private ArrayList<Caminho> caminhos = new ArrayList<>();
+    private ArrayList<Raca> racas = new ArrayList<>();
+    private ArrayList<Classe> classes  = new ArrayList<>();
+    private ArrayList<Habilidade> habilidade  = new ArrayList<>();
+    private ArrayList<Item> items  = new ArrayList<>();
+    private ArrayList<Organizacao> organizacoes  = new ArrayList<>();
+    private ArrayList<MaterialItem> materiaisItens  = new ArrayList<>();
+    private ArrayList<Antecedente> antecedente  = new ArrayList<>();
+    private ArrayList<Idioma> idiomas  = new ArrayList<>(); 
+    private ArrayList<Habilidade> habilidadesExtras  = new ArrayList<>();
 
     public Conteudo(){}
 
