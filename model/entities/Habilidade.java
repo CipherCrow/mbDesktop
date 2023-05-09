@@ -7,6 +7,7 @@ public class Habilidade {
     private String nome;
     private String categoria = HabilidadeCategoriaEnum.Caracteristica.getCategoria();
     private String tipo = HabilidadeTipoEnum.Acao.getTipo();
+    private String runa;
     private String requisito;
     private int    mana;
     private int    dificuldade;
@@ -19,6 +20,7 @@ public class Habilidade {
             String nome,
             String categoria,
             String tipo,
+            String runa,
             String requisito,
             int mana,
             int dificuldade,
@@ -28,6 +30,7 @@ public class Habilidade {
         this.nome = nome;
         this.categoria = categoria;
         this.tipo = tipo;
+        this.runa = runa;
         this.requisito =  requisito;
         this.mana = mana;
         this.dificuldade = dificuldade;
@@ -35,6 +38,16 @@ public class Habilidade {
         this.resumo = resumo;
     }
 
+    public String getRuna() {
+        return runa;
+    }
+
+    public void setRuna(String runa) {
+        this.runa = runa;
+    }
+
+    
+    
     public String getNome() {
         return nome;
     }

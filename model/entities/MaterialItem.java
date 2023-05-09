@@ -1,6 +1,6 @@
 package model.entities;
 
-class MaterialItem {
+public class MaterialItem {
     private String nome;
     private Double multiplicadorDeCusto;
     private Double multiplicadorDeDano;
