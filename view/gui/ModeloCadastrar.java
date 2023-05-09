@@ -27,7 +27,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         habilitarCampos(true);
     }
     
-    public void cancelarCadastro(){
+    public void resetCadastro(){
         jbNovo.setEnabled(true);
         jbSalvar.setEnabled(false);
         jbCancelar.setEnabled(false);
@@ -60,10 +60,8 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Modelo Salvar e Alterar");
-        setPreferredSize(null);
 
         jpCamposDeFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jpCamposDeFiltro.setPreferredSize(null);
         jpCamposDeFiltro.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 10));
 
         jLabel1.setText("Nome");
@@ -126,7 +124,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
                 .addComponent(jbAlterar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbDeletar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,8 +160,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addComponent(jpCamposDeFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(jpCamposDeFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
         );
 
         pack();
@@ -174,7 +171,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        cancelarCadastro();
+        resetCadastro();
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     

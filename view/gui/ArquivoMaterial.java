@@ -1,5 +1,6 @@
 package view.gui;
 
+import controller.ControllerTableEnum;
 import controller.MateriaisController;
 
 public class ArquivoMaterial extends ModeloArquivo{
@@ -10,11 +11,7 @@ public class ArquivoMaterial extends ModeloArquivo{
         
         resetarPainelBordaComTitulo("Material - Descrição");
         
-        String[] colunas = new String[] {
-            "Nome", "Custo*" ,"Dano*","Dano+", "FN+"
-        };
-        
-        resetarTabela(colunas,"material");      
+        resetarTabela(ControllerTableEnum.Material.getCamposTabela(),"material");      
     }
 
     public void resetarTituloIcone(String titulo, String caminhoIcone){

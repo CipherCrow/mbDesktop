@@ -77,6 +77,7 @@ public class Conteudo {
         this.organizacoes = organizacoes;
     }
 
+    //Materiais
     public ArrayList<MaterialItem> getMateriaisItens() {
         return materiaisItens;
     }
@@ -85,6 +86,10 @@ public class Conteudo {
         this.materiaisItens = materiaisItens;
     }
 
+    public void addMaterial(MaterialItem material){
+        this.materiaisItens.add(material);
+    }
+    
     public ArrayList<Antecedente> getAntecedente() {
         return antecedente;
     }

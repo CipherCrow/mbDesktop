@@ -7,6 +7,8 @@ import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import model.entities.Configuracao;
+import model.entities.Conteudo;
 
 public class Main extends javax.swing.JFrame {
 
@@ -15,7 +17,11 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-               
+        
+        Conteudo homebrew = new Conteudo();      
+        homebrew.setNome("Homebrews");
+        Configuracao.addConteudo(homebrew);
+        
         URL url = this.getClass().getResource("/assets/images/iconeMB.png");
         Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(imagemTitulo);

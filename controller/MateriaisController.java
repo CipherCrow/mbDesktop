@@ -3,14 +3,15 @@ package controller;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import model.entities.Configuracao;
+import model.entities.Conteudo;
 import model.entities.MaterialItem;
 
 public class MateriaisController implements Controller {
- 
+    
     public void carregarMateriais(String[] colunas, JTable tabela) throws Exception{
         ArrayList<MaterialItem> materiaisCadastrados = Configuracao.coletarMateriais();
         
-        if(materiaisCadastrados == null){
+        if(materiaisCadastrados == null || materiaisCadastrados.size() == 0){
             throw new Exception("Não existe material cadastrado!");
         }
         
@@ -21,72 +22,6 @@ public class MateriaisController implements Controller {
          
     }   
     
-//    CORRAM PARA AS COLINAS SOCORRO
-//    @Override
-//    public void inserir(String... campos) throws Exception{
-//        //Expressão regular que verifica se o campo é inteiro(positivo ou negativo) e não vazio
-//        String regex = "^\\s*-?\\d+\\s*$";
-//        Pattern pattern = Pattern.compile(regex);
-//        Matcher matcher = pattern.matcher(campos[0]);
-//        
-//        //valida se batem
-//        if(matcher.matches()){
-//            
-//            //Verifica se um campo de texto não está vazio e se um número inserido não contém caracteres especiais (exceto o ponto decimal) e não é um número negativo.
-//            regex = "^(?=\\S)([+-]?([0-9]*[.])?[0-9]+)?$";
-//            pattern = Pattern.compile(regex);
-//            matcher = pattern.matcher(campos[1]);
-//            
-//            if(matcher.matches()){
-//                
-//                //Usa-se a mesma validação do regex anterior
-//                matcher = pattern.matcher(campos[2]);
-//                
-//                if(matcher.matches()){
-//                    
-//                    //Verifica se é um campo de texto inteiro e não vazio
-//                    regex = "^-?\\d+$";
-//                    matcher = pattern.matcher(campos[3]);
-//                    
-//                    if(matcher.matches()){
-//                        
-//                        //usa-se a mesma validação do regex anterior
-//                        matcher = pattern.matcher(campos[4]);
-//                         if(matcher.matches()){
-//                             
-//                            //Verifica se um campo de texto não está vazio e se um número inserido não contém caracteres especiais (exceto o ponto decimal) e não é um número negativo.
-//                            regex = "^(?=\\S)([+-]?([0-9]*[.])?[0-9]+)?$";
-//                            pattern = Pattern.compile(regex);
-//                            matcher = pattern.matcher(campos[5]);
-//                            if(matcher.matches()){
-//                                Configuracao.addConteudo("conteudo");
-//                            }else{
-//                                throw new Exception("Não foi possível inserir o Material"); 
-//                             }
-//                         }
-//                         else{
-//                            throw new Exception("Não foi possível inserir o Material"); 
-//                         }
-//                    }
-//                    else{
-//                        throw new Exception("Não foi possível inserir o Material"); 
-//                    }
-//                }
-//                else{
-//                    throw new Exception("Não foi possível inserir o Material"); 
-//            }
-//            }else
-//            {
-//                throw new Exception("Não foi possível inserir o Material"); 
-//            }
-//        }
-//        else{
-//           throw new Exception("Não foi possível inserir o Material"); 
-//        }
-//        
-//        
-//    }
-    
     @Override
     public void inserir(String... campos) throws Exception {
         validarCampoNaoVazio(campos[0]);
@@ -96,7 +31,17 @@ public class MateriaisController implements Controller {
         validarInteiro(campos[4]);
         validarDecimal(campos[5]);
 
-        //Configuracao.addConteudo("conteudo");
+        MaterialItem material = new MaterialItem(
+                campos[0],
+                converteParaDouble(campos[1]),
+                converteParaDouble(campos[2]),
+                converteParaInt(campos[3]),
+                converteParaInt(campos[4]),
+                converteParaDouble(campos[5]));
+        
+        Conteudo homebrew = Configuracao.encontrarConteudo("Homebrews");
+        homebrew.addMaterial(material);
+        
     }
 
     private void validarCampoNaoVazio(String campo) throws Exception {
@@ -118,6 +63,14 @@ public class MateriaisController implements Controller {
         if (!campo.matches("^(?=\\S)([+-]?([0-9]*[.])?[0-9]+)?$")) {
             throw new Exception("Não foi possível inserir o Material");
         }
+    }
+    
+    private Double converteParaDouble(String string){
+        return Double.parseDouble(string);
+    }
+    
+    private int converteParaInt(String string){
+        return Integer.parseInt(string);
     }
         
     @Override

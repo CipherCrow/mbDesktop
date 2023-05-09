@@ -6,7 +6,7 @@ public class Configuracao {
 
     private static final ArrayList<Conteudo> conteudos = new ArrayList<>();
       
-    public static void mudarEstadoMaterial(String nome) {
+    public static void mudarEstadoConteudo(String nome) {
         Configuracao.conteudos.forEach(conteudo -> {
             if (conteudo.getNome().equals(nome)) {
                 conteudo.mudaStatus();
@@ -14,7 +14,7 @@ public class Configuracao {
         });
     }
 
-    public static Conteudo encontrarMaterial(String nome) {
+    public static Conteudo encontrarConteudo(String nome) {
         Conteudo encontrado = null;
 
         //Problema futuro se continuar usando ArrayList

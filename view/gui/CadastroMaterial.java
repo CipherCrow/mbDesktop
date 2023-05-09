@@ -1,6 +1,8 @@
 package view.gui;
 
 import controller.Controller;
+import controller.ControllerTableEnum;
+import controller.GerenciadorDeTelas;
 import controller.MateriaisController;
 import java.awt.Dimension;
 
@@ -58,11 +60,9 @@ public class CadastroMaterial extends ModeloCadastrar {
         jpCamposDeFiltro.add(jlPesoMultiplicador);
         jpCamposDeFiltro.add(jtfPesoMultiplicador);
   
-        jpCamposDeFiltro.revalidate();
-        jpCamposDeFiltro.repaint();
+        jpCamposDeFiltro.setPreferredSize(new Dimension(jpCamposDeFiltro.getWidth(), jpCamposDeFiltro.getHeight()+50));
         
-        habilitarCampos(false);
-        
+        habilitarCampos(false);      
     } 
 
     @Override
@@ -89,7 +89,7 @@ public class CadastroMaterial extends ModeloCadastrar {
     public void salvarMaterial(String modo){
         
         try{
-            Controller controller = new MateriaisController();
+            MateriaisController controller = new MateriaisController();
                         
             if (modo.equals("Alterar") ){
             
@@ -105,6 +105,11 @@ public class CadastroMaterial extends ModeloCadastrar {
 
             
             limparCampos();
+            JOptionPane.showMessageDialog(null, "Material Salvo Com Sucesso", "Sucesso ao Salvar Material", JOptionPane.INFORMATION_MESSAGE);
+            habilitarCampos(false);
+            resetCadastro();
+            controller.carregarMateriais(ControllerTableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
+            
         }catch(Exception e){
             System.err.println( e.getMessage() );
             JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar", JOptionPane.ERROR_MESSAGE);
