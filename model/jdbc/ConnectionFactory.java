@@ -15,10 +15,11 @@ public class ConnectionFactory {
             
         try {
             conexao = DriverManager.getConnection(url);
+            conexao.setAutoCommit(false);
         } catch (SQLException ex) {
             System.err.println("Não foi possível conectar ao banco!");
         }
-        
+          
         return conexao;
     }
     

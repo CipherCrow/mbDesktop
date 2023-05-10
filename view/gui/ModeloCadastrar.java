@@ -61,7 +61,6 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         jbCancelar = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setTitle("Modelo Salvar e Alterar");
 
         jpCamposDeFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());

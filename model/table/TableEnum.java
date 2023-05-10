@@ -1,13 +1,13 @@
-package controller;
+package model.table;
 
-public enum ControllerTableEnum {
+public enum TableEnum {
     Material(
-        new String[] {"Nome", "Custo*" ,"Dano*","Dano+", "FN+"}
+        new String[] {"Nome", "Custo*" ,"Dano*","Dano+", "FN+", "Peso*"}
             );
 
     String[] arrayColunas;
     
-    ControllerTableEnum(String[] camposTabela){
+    TableEnum(String[] camposTabela){
         this.arrayColunas = camposTabela;
     }
     

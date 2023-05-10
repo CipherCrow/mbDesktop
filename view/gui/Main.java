@@ -6,7 +6,6 @@ import java.awt.Component;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
@@ -30,7 +29,7 @@ public class Main extends javax.swing.JFrame {
         jdpAreaDeTrabalho.add(mAparesentacao);
         mAparesentacao.requestFocusInWindow();
         mAparesentacao.requestFocus();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     public void iniciaBancoDeDados(){

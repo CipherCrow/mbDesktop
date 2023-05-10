@@ -4,19 +4,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.entities.MaterialItem;
 
-public class MaterialDAO {
+public class MaterialDAO implements DAO{
     private Connection conexao;
      
     public MaterialDAO(Connection conexao){
         this.conexao = conexao;
     }
-     
-    public void add(Object objeto){
+    
+    @Override
+    public void add(Object objeto) throws SQLException{
         MaterialItem material = (MaterialItem)  objeto;
         String query = "INSERT INTO material(nom_material, qtd_multCusto, qtd_multDano, qtd_modDano, qtd_modFn, qtd_multPeso) VALUES (?,?,?,?,?,?)";
         
@@ -29,11 +29,13 @@ public class MaterialDAO {
             sql.setDouble(6, material.getMultiplicadorDePeso());
             
             sql.execute();
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Erro ao salvar material:" + e.getMessage(), "Erro " + e, JOptionPane.ERROR_MESSAGE);
+        }catch(SQLException e){
+            conexao.rollback();
+            throw e;
 
         }finally{
             try {
+                conexao.commit();
                 conexao.close();
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Erro ao desconectar do banco:" + ex.getMessage(), "Erro " + ex, JOptionPane.ERROR_MESSAGE);
@@ -42,13 +44,14 @@ public class MaterialDAO {
          
     }
     
-    public Set<MaterialItem> selectAll(){
-        Set<MaterialItem> materiais = new HashSet<>();
+    @Override
+    public ArrayList<MaterialItem> selectAll() throws Exception{
+        ArrayList<MaterialItem> materiais = new ArrayList<>();
         
         String query = "SELECT * FROM material";
         
-        try( PreparedStatement sql = conexao.prepareStatement(query) ){            
-            ResultSet rs = sql.getResultSet();
+        try( PreparedStatement sql = conexao.prepareStatement(query) ){  
+            ResultSet rs = sql.executeQuery();
             
             while(rs.next()){
                 int id = rs.getInt(1);
@@ -62,20 +65,23 @@ public class MaterialDAO {
                 materiais.add( new MaterialItem(id,nome,multiplicadorDeCusto,multiplicadorDeDano,modificadorDeDano,modificadorDeFn,multiplicadorDePeso) );
             }
             
-        }catch(Exception e){
-            System.err.println("Erro ao coletar todos os materiais!");
-            JOptionPane.showMessageDialog(null, "Erro ao conectar no banco:" + e.getMessage(), "Erro " + e, JOptionPane.ERROR_MESSAGE);
+        }catch(SQLException e){
+            conexao.rollback();
+            
+            throw e;
         }finally{
             try {
+                conexao.commit();
                 conexao.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao desconectar do banco:" + ex.getMessage(), "Erro " + ex, JOptionPane.ERROR_MESSAGE);
+            } catch (SQLException e) {
+                throw e;
             }
         }
         return materiais;
     }
     
-    public void update(Object objeto){
+    @Override
+    public void update(Object objeto) throws SQLException{
         MaterialItem material = (MaterialItem)  objeto;
         String query = "UPDATE material SET"
                 + " nom_material = (?)"
@@ -98,14 +104,21 @@ public class MaterialDAO {
             
             sql.execute();
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar material:" + e.getMessage(), "Erro " + e, JOptionPane.ERROR_MESSAGE);
+            conexao.rollback();            
+            throw e;
 
         }finally{
             try {
+                conexao.commit();
                 conexao.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao desconectar do banco:" + ex.getMessage(), "Erro " + ex, JOptionPane.ERROR_MESSAGE);
+            } catch (SQLException e) {
+                throw e;
             }
         }
+    }
+
+    @Override
+    public void find() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

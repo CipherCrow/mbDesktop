@@ -15,8 +15,29 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
      */
     public ModeloArquivo() {
         initComponents();
+        atualizarTabela();
+    }
+    
+    public void resetarTituloIcone(String titulo, String caminhoIcone){
+        setTitle(titulo);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource(caminhoIcone)));
     }
 
+    public void resetarPainelBordaComTitulo(String titulo){
+        jpDescricao.setBorder(javax.swing.BorderFactory.createTitledBorder(titulo));
+        jtpTextoDescricao.setText("");
+    }
+           
+    public void nenhumResultadoCadastrado(String texto){
+        jtTabela.setModel(new javax.swing.table.DefaultTableModel( 
+            new Object [][] {{"Ainda não existe nem um(a) " + texto + " forjado(a)"}}
+          , new String[]{"Mensagem de Hou:"}
+        ));
+    }
+
+    public abstract void filtrar();
+    public abstract void removerFiltro();
+    public abstract void atualizarTabela();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +61,6 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
         jbFiltrar = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setTitle("Modelo de Arquivo");
 
         jpDescricao.setBorder(javax.swing.BorderFactory.createTitledBorder("Modelo - Descrição"));
@@ -114,10 +134,20 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
         jbRemoverFiltros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/arquivo/icons8-filter-25(1).png"))); // NOI18N
         jbRemoverFiltros.setMnemonic('r');
         jbRemoverFiltros.setText("Remover Filtros");
+        jbRemoverFiltros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRemoverFiltrosActionPerformed(evt);
+            }
+        });
 
         jbFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/arquivo/icons8-filter-25.png"))); // NOI18N
         jbFiltrar.setMnemonic('f');
         jbFiltrar.setText("Filtrar");
+        jbFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbFiltrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpCamposDeFiltroLayout = new javax.swing.GroupLayout(jpCamposDeFiltro);
         jpCamposDeFiltro.setLayout(jpCamposDeFiltroLayout);
@@ -175,6 +205,14 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFiltrarActionPerformed
+        filtrar();
+    }//GEN-LAST:event_jbFiltrarActionPerformed
+
+    private void jbRemoverFiltrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRemoverFiltrosActionPerformed
+        removerFiltro();
+    }//GEN-LAST:event_jbRemoverFiltrosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -187,7 +225,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
     public javax.swing.JScrollPane jspPainelDeScroll;
     private javax.swing.JScrollPane jspTextoScroll;
     public javax.swing.JTable jtTabela;
-    private javax.swing.JTextField jtfNome;
+    public javax.swing.JTextField jtfNome;
     public javax.swing.JTextPane jtpTextoDescricao;
     // End of variables declaration//GEN-END:variables
 }

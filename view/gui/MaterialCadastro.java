@@ -1,7 +1,7 @@
 package view.gui;
 
 import controller.Controller;
-import controller.ControllerTableEnum;
+import model.table.TableEnum;
 import controller.GerenciadorDeTelas;
 import controller.MateriaisController;
 import exceptions.CamposInvalidosException;
@@ -11,12 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class CadastroMaterial extends ModeloCadastrar {
+public class MaterialCadastro extends ModeloCadastrar {
     
     public JTextField jtfCusto, jtfDanoMultiplicavel, jtfDanoAdicional, jtfFn, jtfPesoMultiplicador;
     public JLabel jlCusto, jlDanoMultiplicavel, jlDanoAdicional, jlFn,  jlPesoMultiplicador;
     
-    public CadastroMaterial(){
+    public MaterialCadastro(){
         Dimension grande = new Dimension(200, 28);
         Dimension pequeno = new Dimension(60, 28);
         
@@ -121,7 +121,7 @@ public class CadastroMaterial extends ModeloCadastrar {
             habilitarCampos(false);
             resetCadastro();
             
-            //controller.carregarMateriais(ControllerTableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
+            //controller.carregarMateriais(TableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
             
         }catch(CamposInvalidosException e){
             JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar: " + e, JOptionPane.ERROR_MESSAGE);

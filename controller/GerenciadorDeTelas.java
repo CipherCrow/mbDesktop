@@ -1,24 +1,24 @@
 package controller;
 
-import view.gui.ArquivoMaterial;
-import view.gui.CadastroMaterial;
+import view.gui.MaterialArquivo;
+import view.gui.MaterialCadastro;
 
 public class GerenciadorDeTelas{
     
     //Vai Crescer infinitamente, precisarei lidar com isso de alguma forma esperta
-    private static ArquivoMaterial arqMaterial;
-    private static CadastroMaterial cadMaterial;
+    private static MaterialArquivo arqMaterial;
+    private static MaterialCadastro cadMaterial;
     
-    public static ArquivoMaterial getArqMaterial() {
+    public static MaterialArquivo getArqMaterial() {
         if(arqMaterial == null){
-            arqMaterial = new ArquivoMaterial();
+            arqMaterial = new MaterialArquivo();
         }
         return arqMaterial ;
     }
 
-    public static CadastroMaterial getCadMaterial() {
+    public static MaterialCadastro getCadMaterial() {
         if(cadMaterial == null){
-            cadMaterial = new CadastroMaterial();
+            cadMaterial = new MaterialCadastro();
         }
         return cadMaterial ;
     }
