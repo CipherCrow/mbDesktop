@@ -2,17 +2,16 @@ package controller;
 
 import java.io.File;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.jdbc.ConnectionFactory;
 import model.jdbc.TabelasEnum;
 
 public class PopuladorDeBanco {
     private Connection con;
     
-    public PopuladorDeBanco(){}
+    public PopuladorDeBanco() throws ClassNotFoundException{
+        Class.forName("org.h2.Driver");
+    }
     
     public boolean criaOBanco() throws Exception{
         if(seExisteBanco()){

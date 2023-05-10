@@ -6,10 +6,9 @@ import java.awt.Component;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
-import model.entities.Configuracao;
-import model.entities.Conteudo;
 
 public class Main extends javax.swing.JFrame {
 
@@ -31,18 +30,16 @@ public class Main extends javax.swing.JFrame {
         jdpAreaDeTrabalho.add(mAparesentacao);
         mAparesentacao.requestFocusInWindow();
         mAparesentacao.requestFocus();
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     public void iniciaBancoDeDados(){
-        try {
-            Class.forName("org.h2.Driver");
-            
+        try {            
             PopuladorDeBanco populador = new PopuladorDeBanco();
             populador.criaOBanco();
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao iniciar banco de dados da apicação, por gentileza reinicie a aplicação!", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Erro ao iniciar banco de dados da apicação, por gentileza reinicie a aplicação!", "Erro " + e, JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -61,6 +58,14 @@ public class Main extends javax.swing.JFrame {
             if(jaExisteComponente){
                 janela.setClosed(false);
             }else{
+                //Realiza calculos para gerar a janela centralizada;
+                int larguraDesktop = jdpAreaDeTrabalho.getWidth();
+                int alturaDesktop = jdpAreaDeTrabalho.getHeight();
+                
+                int larguraFrame = janela.getWidth();
+                int alturaFrame = janela.getHeight();
+                janela.setLocation( larguraDesktop / 2 - larguraFrame / 2, alturaDesktop / 2 - alturaFrame / 2);
+                
                 jdpAreaDeTrabalho.add( janela );
             }
             

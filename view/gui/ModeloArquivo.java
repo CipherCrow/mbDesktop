@@ -40,6 +40,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
         jbFiltrar = new javax.swing.JButton();
 
         setClosable(true);
+        setIconifiable(true);
         setTitle("Modelo de Arquivo");
 
         jpDescricao.setBorder(javax.swing.BorderFactory.createTitledBorder("Modelo - Descrição"));
