@@ -108,7 +108,8 @@ public class CadastroMaterial extends ModeloCadastrar {
             JOptionPane.showMessageDialog(null, "Material Salvo Com Sucesso", "Sucesso ao Salvar Material", JOptionPane.INFORMATION_MESSAGE);
             habilitarCampos(false);
             resetCadastro();
-            controller.carregarMateriais(ControllerTableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
+            
+            //controller.carregarMateriais(ControllerTableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
             
         }catch(Exception e){
             System.err.println( e.getMessage() );

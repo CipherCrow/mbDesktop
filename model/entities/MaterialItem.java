@@ -1,6 +1,7 @@
 package model.entities;
 
 public class MaterialItem {
+    private int id;
     private String nome;
     private Double multiplicadorDeCusto;
     private Double multiplicadorDeDano;
@@ -10,6 +11,23 @@ public class MaterialItem {
 
     public MaterialItem(){}
 
+    public MaterialItem(
+            int id,
+            String nome,
+            Double multiplicadorDeCusto,
+            Double multiplicadorDeDano,
+            int modificadorDeDano,
+            int modificadorDeFn,
+            Double multiplicadorDePeso) {
+        this.id = id;
+        this.nome = nome;
+        this.multiplicadorDeCusto = multiplicadorDeCusto;
+        this.multiplicadorDeDano = multiplicadorDeDano;
+        this.modificadorDeDano = modificadorDeDano;
+        this.modificadorDeFn = modificadorDeFn;
+        this.multiplicadorDePeso = multiplicadorDePeso;
+    }
+    
     public MaterialItem(
             String nome,
             Double multiplicadorDeCusto,
@@ -25,6 +43,14 @@ public class MaterialItem {
         this.multiplicadorDePeso = multiplicadorDePeso;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+            
     public String getNome() {
         return nome;
     }
@@ -40,7 +66,7 @@ public class MaterialItem {
     public void setMultiplicadorDeCusto(Double multiplicadorDeCusto) {
         this.multiplicadorDeCusto = multiplicadorDeCusto;
     }
-
+    
     public Double getMultiplicadorDeDano() {
         return multiplicadorDeDano;
     }

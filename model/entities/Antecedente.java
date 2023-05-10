@@ -1,6 +1,7 @@
 package model.entities;
 
 public class Antecedente {
+    private int id;
     private String nome;
     private String Requisitos;
     private Habilidade beneficio;
@@ -8,11 +9,20 @@ public class Antecedente {
 
     public Antecedente(){}
 
-    public Antecedente(String nome, String Requisitos, Habilidade beneficio, Item EquipamentoBonus) {
+    public Antecedente(int id, String nome, String Requisitos, Habilidade beneficio, Item EquipamentoBonus) {
+        this.id = id;
         this.nome = nome;
         this.Requisitos = Requisitos;
         this.beneficio = beneficio;
         this.EquipamentoBonus = EquipamentoBonus;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

@@ -1,19 +1,27 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import javax.swing.JTable;
+import model.DAO.MaterialDAO;
 import model.entities.Configuracao;
 import model.entities.Conteudo;
 import model.entities.MaterialItem;
+import model.jdbc.ConnectionFactory;
 
 public class MateriaisController implements Controller {
     
     public void carregarMateriais(String[] colunas, JTable tabela) throws Exception{
-        ArrayList<MaterialItem> materiaisCadastrados = Configuracao.coletarMateriais();
+        MaterialDAO materialDAO = new MaterialDAO(new ConnectionFactory().getConexao());
         
-        if(materiaisCadastrados == null || materiaisCadastrados.size() == 0){
-            throw new Exception("Não existe material cadastrado!");
-        }
+        HashSet<MaterialItem> materiaisCadastrados = (HashSet) materialDAO.selectAll();
+        
+//        //velho
+//        ArrayList<MaterialItem> materiaisCadastrados = Configuracao.coletarMateriais();
+//        
+//        if(materiaisCadastrados == null || materiaisCadastrados.size() == 0){
+//            throw new Exception("Não existe material cadastrado!");
+//        }
         
         tabela.setModel(
         new javax.swing.table.DefaultTableModel( 
@@ -39,8 +47,9 @@ public class MateriaisController implements Controller {
                 converteParaInt(campos[4]),
                 converteParaDouble(campos[5]));
         
-        Conteudo homebrew = Configuracao.encontrarConteudo("Homebrews");
-        homebrew.addMaterial(material);
+        new MaterialDAO( new ConnectionFactory().getConexao() ).add(material);
+                
+
         
     }
 

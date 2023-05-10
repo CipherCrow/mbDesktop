@@ -1,6 +1,7 @@
 package view.gui;
 
 import controller.GerenciadorDeTelas;
+import controller.PopuladorDeBanco;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -18,9 +19,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         
-        Conteudo homebrew = new Conteudo();      
-        homebrew.setNome("Homebrews");
-        Configuracao.addConteudo(homebrew);
+        iniciaBancoDeDados();
         
         URL url = this.getClass().getResource("/assets/images/iconeMB.png");
         Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
@@ -35,6 +34,18 @@ public class Main extends javax.swing.JFrame {
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
+    public void iniciaBancoDeDados(){
+        try {
+            Class.forName("org.h2.Driver");
+            
+            PopuladorDeBanco populador = new PopuladorDeBanco();
+            populador.criaOBanco();
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao iniciar banco de dados da apicação, por gentileza reinicie a aplicação!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     public void abrirJanela(JInternalFrame janela){
         try{ 
             Component[] componentes = jdpAreaDeTrabalho.getComponents();
