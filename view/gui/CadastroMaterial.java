@@ -4,6 +4,7 @@ import controller.Controller;
 import controller.ControllerTableEnum;
 import controller.GerenciadorDeTelas;
 import controller.MateriaisController;
+import exceptions.CamposInvalidosException;
 import java.awt.Dimension;
 
 import javax.swing.JLabel;
@@ -22,7 +23,8 @@ public class CadastroMaterial extends ModeloCadastrar {
         resetarTituloIcone(
                 "Cadastrar Material"
                ,"/assets/images/submenu/icons8-medieval-20(1).png");
-        
+
+        jtfId.setPreferredSize(pequeno);       
         jtfNome.setPreferredSize(grande);
         
         jlCusto = new JLabel("Custo (*)");       
@@ -77,6 +79,7 @@ public class CadastroMaterial extends ModeloCadastrar {
     
     @Override
     public void limparCampos() {
+        jtfId.setText("");
         jtfNome.setText("");
         jtfCusto.setText("");
         jtfDanoMultiplicavel.setText("");
@@ -92,7 +95,16 @@ public class CadastroMaterial extends ModeloCadastrar {
             MateriaisController controller = new MateriaisController();
                         
             if (modo.equals("Alterar") ){
-            
+                
+                controller.alterar(
+                    jtfId.getText(),
+                    jtfNome.getText(),
+                    jtfCusto.getText(),
+                    jtfDanoMultiplicavel.getText(),
+                    jtfDanoAdicional.getText(),
+                    jtfFn.getText(),
+                    jtfPesoMultiplicador.getText());
+                
             }else{
                 controller.inserir(
                     jtfNome.getText(),
@@ -111,9 +123,12 @@ public class CadastroMaterial extends ModeloCadastrar {
             
             //controller.carregarMateriais(ControllerTableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
             
-        }catch(Exception e){
+        }catch(CamposInvalidosException e){
+            JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar: " + e, JOptionPane.ERROR_MESSAGE);
+        }
+        catch(Exception e){
             System.err.println( e.getMessage() );
-            JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro ao Salvar: " + e , JOptionPane.ERROR_MESSAGE);
         }
         
     }

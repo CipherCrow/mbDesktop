@@ -49,6 +49,8 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jpCamposDeFiltro = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jtfId = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jtfNome = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -63,6 +65,12 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
 
         jpCamposDeFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jpCamposDeFiltro.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 10));
+
+        jLabel2.setText("Id");
+        jpCamposDeFiltro.add(jLabel2);
+
+        jtfId.setEnabled(false);
+        jpCamposDeFiltro.add(jtfId);
 
         jLabel1.setText("Nome");
         jpCamposDeFiltro.add(jLabel1);
@@ -173,7 +181,6 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         resetCadastro();
     }//GEN-LAST:event_jbCancelarActionPerformed
-
     
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         salvarMaterial("Salvar");
@@ -182,6 +189,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JButton jbAlterar;
     public javax.swing.JButton jbCancelar;
@@ -189,6 +197,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     public javax.swing.JButton jbNovo;
     public javax.swing.JButton jbSalvar;
     public javax.swing.JPanel jpCamposDeFiltro;
+    public javax.swing.JTextField jtfId;
     public javax.swing.JTextField jtfNome;
     // End of variables declaration//GEN-END:variables
 }
