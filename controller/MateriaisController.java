@@ -70,8 +70,16 @@ public class MateriaisController implements Controller {
     }
 
     @Override
-    public void filtrar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void filtrar(Object... parametros) throws Exception{
+        String nome = (String) parametros[0];
+        JTable tabela = (JTable) parametros[1];
+        util.validarCampoNaoVazio(nome);
+
+        MaterialDAO materialDAO =  new MaterialDAO( new ConnectionFactory().getConexao() );
+        ArrayList<MaterialItem> materiaisEncontrados = (ArrayList) materialDAO.findByName(nome);     
+        
+        MaterialTableModel modelo = new MaterialTableModel(materiaisEncontrados);
+        tabela.setModel( modelo );  
     }
 
 }

@@ -118,7 +118,43 @@ public class MaterialDAO implements DAO{
     }
 
     @Override
-    public void find() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Object findByName(Object... parametros) throws Exception {
+        ArrayList<MaterialItem> materiais = new ArrayList();
+        String nomeBuscado = String.format("%s", parametros[0]);
+        String query = "SELECT * from material WHERE "
+                + "nom_material LIKE ?";
+        
+        try( PreparedStatement sql = conexao.prepareStatement(query) ){
+            
+            sql.setString(1, "%"+nomeBuscado+"%");
+            ResultSet rs = sql.executeQuery();
+            
+            while(rs.next()){
+                int id = rs.getInt(1);
+                String nome = rs.getString(2);
+                Double multiplicadorDeCusto = rs.getDouble(3);
+                Double multiplicadorDeDano = rs.getDouble(4);
+                int modificadorDeDano = rs.getInt(5);
+                int modificadorDeFn =  rs.getInt(6);
+                Double multiplicadorDePeso =  rs.getDouble(7);
+                
+                materiais.add( new MaterialItem(id,nome,multiplicadorDeCusto,multiplicadorDeDano,modificadorDeDano,modificadorDeFn,multiplicadorDePeso) );
+                System.out.println(rs);
+            }
+            
+        }catch(Exception e){
+            conexao.rollback();            
+            throw e;
+
+        }finally{
+            try {
+                conexao.commit();
+                conexao.close();
+            } catch (SQLException e) {
+                throw e;
+            }
+        }
+        
+        return materiais;
     }
 }

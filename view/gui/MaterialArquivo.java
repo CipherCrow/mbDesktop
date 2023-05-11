@@ -19,9 +19,14 @@ public class MaterialArquivo extends ModeloArquivo{
     @Override
     public void filtrar() {
         MateriaisController controller = new MateriaisController();
-        jtfNome.getText();
-        controller.filtrar();
-        
+        try {
+            controller.filtrar( jtfNome.getText(), jtTabela );
+        } catch (CamposInvalidosException e) {
+            JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar: " + e, JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro ao efetuar operacao:" + e.getStackTrace(), "Erro " + e, JOptionPane.ERROR_MESSAGE);
+        }    
     }
 
     @Override
