@@ -27,17 +27,15 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
         jpDescricao.setBorder(javax.swing.BorderFactory.createTitledBorder(titulo));
         jtpTextoDescricao.setText("");
     }
-           
-    public void nenhumResultadoCadastrado(String texto){
-        jtTabela.setModel(new javax.swing.table.DefaultTableModel( 
-            new Object [][] {{"Ainda não existe nem um(a) " + texto + " forjado(a)"}}
-          , new String[]{"Mensagem de Hou:"}
-        ));
+    
+    public void permitirAlterar(boolean bool){
+        jbDetalhe.setEnabled( bool );
     }
-
+          
     public abstract void filtrar();
     public abstract void removerFiltro();
     public abstract void atualizarTabela();
+    public abstract void carregaDescricao();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -125,6 +123,12 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
             }
         ));
         jtTabela.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jtTabela.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jtTabela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtTabelaMouseClicked(evt);
+            }
+        });
         jspPainelDeScroll.setViewportView(jtTabela);
 
         jpCamposDeFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -212,6 +216,10 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
     private void jbRemoverFiltrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRemoverFiltrosActionPerformed
         removerFiltro();
     }//GEN-LAST:event_jbRemoverFiltrosActionPerformed
+
+    private void jtTabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtTabelaMouseClicked
+        carregaDescricao();
+    }//GEN-LAST:event_jtTabelaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

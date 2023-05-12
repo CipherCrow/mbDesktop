@@ -12,6 +12,15 @@ public class MateriaisController implements Controller {
     private ControllerUtil util = new ControllerUtil();
     
     @Override
+    public void atualizaDescricao(Object... parametros) {
+        JTable tabela = (JTable) parametros[1];
+        MaterialTableModel model = (MaterialTableModel) tabela.getModel();
+        
+        MaterialItem material = model.getObjeto((int) parametros[0] - 1);
+        GerenciadorDeTelas.getArqMaterial().jtpTextoDescricao.setText(" Teste ");
+    }
+    
+    @Override
     public void carregarTudo(JTable tabela) throws Exception{
         MaterialDAO materialDAO = new MaterialDAO(new ConnectionFactory().getConexao());
         

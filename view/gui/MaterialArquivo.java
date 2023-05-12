@@ -47,4 +47,11 @@ public class MaterialArquivo extends ModeloArquivo{
             JOptionPane.showMessageDialog(null, "Erro ao efetuar operacao:" + e.getStackTrace(), "Erro " + e, JOptionPane.ERROR_MESSAGE);
         }
     }
+
+    @Override
+    public void carregaDescricao() {
+        MateriaisController controller = new MateriaisController();
+        controller.atualizaDescricao(jtTabela.getSelectedRow());
+        permitirAlterar( true );
+    }
 }
