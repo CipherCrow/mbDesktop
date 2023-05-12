@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import model.entities.MaterialItem;
 
 public class MaterialDAO implements DAO{
@@ -37,8 +36,8 @@ public class MaterialDAO implements DAO{
             try {
                 conexao.commit();
                 conexao.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao desconectar do banco:" + ex.getMessage(), "Erro " + ex, JOptionPane.ERROR_MESSAGE);
+            } catch (SQLException e) {
+                throw e;
             }
         }
          

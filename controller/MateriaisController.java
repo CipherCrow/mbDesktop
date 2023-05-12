@@ -16,9 +16,15 @@ public class MateriaisController implements Controller {
         MaterialDAO materialDAO = new MaterialDAO(new ConnectionFactory().getConexao());
         
         ArrayList<MaterialItem> materiaisCadastrados = (ArrayList) materialDAO.selectAll();
-        
         MaterialTableModel modelo = new MaterialTableModel(materiaisCadastrados);
-        tabela.setModel( modelo );    
+        
+        //verifica se o modelo já foi carregado anteriormente e atualiza ou inicia
+        if( tabela.getModel().getClass().isInstance( MaterialTableModel.class ) ){
+            MaterialTableModel modeloAtual = (MaterialTableModel) tabela.getModel();
+            modeloAtual.setMateriais( materiaisCadastrados );
+        }else{    
+            tabela.setModel( modelo );  
+        }
         
     }   
     

@@ -1,6 +1,8 @@
 
 package view.gui;
 
+import controller.GerenciadorDeTelas;
+
 /**
  *
  * @author Administrador
@@ -184,6 +186,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         salvarMaterial("Salvar");
+        GerenciadorDeTelas.getArqMaterial().atualizarTabela();
     }//GEN-LAST:event_jbSalvarActionPerformed
 
 
