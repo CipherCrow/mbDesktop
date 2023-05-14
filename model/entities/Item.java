@@ -11,7 +11,7 @@ public class Item {
     private String descricao;
     private int quantidade;
     private ItemQualidadeEnum qualidadeDoItem;
-    private MaterialItem materialDoItem;
+    private Material materialDoItem;
     private ArrayList<ItemEspecialEnum> especial;
     private String forcaNecessaria;
 
@@ -23,7 +23,7 @@ public class Item {
             String descricao, 
             int quantidade,
             ItemQualidadeEnum qualidadeDoItem, 
-            MaterialItem materialDoItem,
+            Material materialDoItem,
             ArrayList<ItemEspecialEnum> especial,
             String forcaNecessaria) {
         this.nome = nome;
@@ -83,11 +83,11 @@ public class Item {
         this.qualidadeDoItem = qualidadeDoItem;
     }
 
-    public MaterialItem getMaterialDoItem() {
+    public Material getMaterialDoItem() {
         return materialDoItem;
     }
 
-    public void setMaterialDoItem(MaterialItem materialDoItem) {
+    public void setMaterialDoItem(Material materialDoItem) {
         this.materialDoItem = materialDoItem;
     }
 

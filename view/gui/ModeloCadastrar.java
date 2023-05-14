@@ -21,26 +21,34 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource(caminhoIcone)));
     }
     
-    public void iniciarCadastro(){
-        jbNovo.setEnabled(false);
-        jbSalvar.setEnabled(true);
-        jbCancelar.setEnabled(true);
+    public void modoCadastro(boolean modo){
+        jbNovo.setEnabled(!modo);
+        jbSalvar.setEnabled(modo);
+        jbCancelar.setEnabled(modo);
         
-        habilitarCampos(true);
+        habilitarCampos(modo);
     }
     
     public void resetCadastro(){
-        jbNovo.setEnabled(true);
-        jbSalvar.setEnabled(false);
-        jbCancelar.setEnabled(false);
-        
-        habilitarCampos(false);
+        modoCadastro(false);
         limparCampos();
+    }
+    
+    public void modoAlteracao(boolean modo){
+        jbNovo.setEnabled(!modo);
+        jbAlterar.setEnabled(modo);
+        
+        jbSalvar.setEnabled(modo);
+        jbCancelar.setEnabled(modo);
+        
+        habilitarCampos(modo);
     }
     
     public abstract void habilitarCampos(boolean logica);
     public abstract void limparCampos();
     public abstract void salvarMaterial(String modo);
+    public abstract void preencherConteudo();
+    public abstract void prepararParaEdicao(int idMaterialParaEdicao);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -177,7 +185,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
-        iniciarCadastro();
+        modoCadastro(true);
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed

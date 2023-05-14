@@ -293,7 +293,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCadMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadMaterialActionPerformed
-        abrirJanela(GerenciadorDeTelas.getCadMaterial());
+        abrirJanela(GerenciadorDeTelas.getCadMaterial("Novo"));
     }//GEN-LAST:event_jmiCadMaterialActionPerformed
 
     private void jmiMateriaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMateriaisActionPerformed

@@ -2,12 +2,13 @@ package controller;
 
 import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import model.DAO.MaterialDAO;
-import model.entities.MaterialItem;
+import model.entities.Material;
 import model.jdbc.ConnectionFactory;
 import model.table.MaterialTableModel;
 
-public class MateriaisController implements Controller {
+public class MaterialController implements Controller {
     
     private ControllerUtil util = new ControllerUtil();
     
@@ -16,15 +17,15 @@ public class MateriaisController implements Controller {
         JTable tabela = (JTable) parametros[1];
         MaterialTableModel model = (MaterialTableModel) tabela.getModel();
         
-        MaterialItem material = model.getObjeto((int) parametros[0] - 1);
-        GerenciadorDeTelas.getArqMaterial().jtpTextoDescricao.setText(" Teste ");
+        Material material = model.getObjeto((int) parametros[0]);
+        GerenciadorDeTelas.getArqMaterial().jtpTextoDescricao.setText( material.getDescricaoView() );
     }
     
     @Override
     public void carregarTudo(JTable tabela) throws Exception{
         MaterialDAO materialDAO = new MaterialDAO(new ConnectionFactory().getConexao());
         
-        ArrayList<MaterialItem> materiaisCadastrados = (ArrayList) materialDAO.selectAll();
+        ArrayList<Material> materiaisCadastrados = (ArrayList) materialDAO.selectAll();
         MaterialTableModel modelo = new MaterialTableModel(materiaisCadastrados);
         
         //verifica se o modelo já foi carregado anteriormente e atualiza ou inicia
@@ -41,7 +42,7 @@ public class MateriaisController implements Controller {
     public void inserir(String... campos) throws Exception {
         realizarValidacoesDosCampos(campos);
 
-        MaterialItem material = new MaterialItem();
+        Material material = new Material();
         
         material.setNome(campos[0]);
         material.setMultiplicadorDeCusto(util.converteParaDouble(campos[1]));
@@ -57,7 +58,7 @@ public class MateriaisController implements Controller {
     public void alterar(String... campos) throws Exception {
         realizarValidacoesDosCampos(campos);
         
-        MaterialItem material = new MaterialItem();
+        Material material = new Material();
         
         material.setId(util.converteParaInt(campos[0]));
         material.setNome(campos[1]);
@@ -67,7 +68,7 @@ public class MateriaisController implements Controller {
         material.setModificadorDeFn(util.converteParaInt(campos[5]));
         material.setMultiplicadorDePeso(util.converteParaDouble(campos[6]));
         
-        new MaterialDAO( new ConnectionFactory().getConexao() ).add(material); 
+        new MaterialDAO( new ConnectionFactory().getConexao() ).update( material ); 
     }
     
     public void realizarValidacoesDosCampos(String... campos) throws Exception{
@@ -91,10 +92,34 @@ public class MateriaisController implements Controller {
         util.validarCampoNaoVazio(nome);
 
         MaterialDAO materialDAO =  new MaterialDAO( new ConnectionFactory().getConexao() );
-        ArrayList<MaterialItem> materiaisEncontrados = (ArrayList) materialDAO.findByName(nome);     
+        ArrayList<Material> materiaisEncontrados = (ArrayList) materialDAO.findByName(nome);     
         
         MaterialTableModel modelo = new MaterialTableModel(materiaisEncontrados);
         tabela.setModel( modelo );  
+    }
+
+    @Override
+    public void carregarParaEdicao(Object... parametro) throws Exception {
+        MaterialDAO materialDAO =  new MaterialDAO( new ConnectionFactory().getConexao() );
+        Material materialParaEdicao = (Material) materialDAO.findByID( Integer.parseInt( (String) parametro[0] ));
+        
+        ArrayList<JTextField> camposParaEdicao = (ArrayList<JTextField>) parametro[1];
+        
+        camposParaEdicao.get(0).setText( util.converteParaString( materialParaEdicao.getId() ));
+        camposParaEdicao.get(1).setText( util.converteParaString( materialParaEdicao.getNome() ));
+        camposParaEdicao.get(2).setText( util.converteParaString( materialParaEdicao.getMultiplicadorDeCusto() ));
+        camposParaEdicao.get(3).setText( util.converteParaString( materialParaEdicao.getMultiplicadorDeDano() ));
+        camposParaEdicao.get(4).setText( util.converteParaString( materialParaEdicao.getModificadorDeDano() ));
+        camposParaEdicao.get(5).setText( util.converteParaString( materialParaEdicao.getModificadorDeFn() ));
+        camposParaEdicao.get(6).setText( util.converteParaString( materialParaEdicao.getMultiplicadorDePeso() ));
+        
+//        jtfId.setText( Integer.toString( materialParaEdicao.getId() ));
+//        jtfNome.setText( materialParaEdicao.getNome() );
+//        jtfCusto.setText( Double.toString( materialParaEdicao.getMultiplicadorDeCusto() ) );
+//        jtfDanoMultiplicavel.setText( Double.toString( materialParaEdicao.getMultiplicadorDeDano() ) );
+//        jtfDanoAdicional.setText( Integer.toString( materialParaEdicao.getModificadorDeDano() ) );
+//        jtfFn.setText( Integer.toString( materialParaEdicao.getModificadorDeFn() ) );
+//        jtfPesoMultiplicador.setText( Double.toString( materialParaEdicao.getMultiplicadorDePeso() ) );       
     }
 
 }

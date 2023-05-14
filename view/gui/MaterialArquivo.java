@@ -1,6 +1,7 @@
 package view.gui;
 
-import controller.MateriaisController;
+import controller.GerenciadorDeTelas;
+import controller.MaterialController;
 import exceptions.CamposInvalidosException;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -12,13 +13,15 @@ public class MaterialArquivo extends ModeloArquivo{
                            "/assets/images/submenu/icons8-medieval-20.png");
         
         resetarPainelBordaComTitulo("Material - Descrição");
+        
+        resetarIconeDemonstrativo("/assets/images/arquivo/icons8-iron-ore-100.png");
              
     }
 
 
     @Override
     public void filtrar() {
-        MateriaisController controller = new MateriaisController();
+        MaterialController controller = new MaterialController();
         try {
             controller.filtrar( jtfNome.getText(), jtTabela );
         } catch (CamposInvalidosException e) {
@@ -37,7 +40,7 @@ public class MaterialArquivo extends ModeloArquivo{
     @Override
     public void atualizarTabela() {
         try {
-            MateriaisController controller = new MateriaisController();
+            MaterialController controller = new MaterialController();
             controller.carregarTudo( jtTabela );
         } catch (CamposInvalidosException e) {
             JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar: " + e, JOptionPane.ERROR_MESSAGE);
@@ -50,8 +53,15 @@ public class MaterialArquivo extends ModeloArquivo{
 
     @Override
     public void carregaDescricao() {
-        MateriaisController controller = new MateriaisController();
-        controller.atualizaDescricao(jtTabela.getSelectedRow());
+        MaterialController controller = new MaterialController();
+        controller.atualizaDescricao(jtTabela.getSelectedRow(), jtTabela);
         permitirAlterar( true );
+    }
+
+    @Override
+    public void carregaEdicaoSelecionado() {
+        MaterialController controller = new MaterialController();
+        
+        GerenciadorDeTelas.getArqMaterial();
     }
 }

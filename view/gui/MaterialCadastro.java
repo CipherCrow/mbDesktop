@@ -3,13 +3,17 @@ package view.gui;
 import controller.Controller;
 import model.table.TableEnum;
 import controller.GerenciadorDeTelas;
-import controller.MateriaisController;
+import controller.MaterialController;
 import exceptions.CamposInvalidosException;
 import java.awt.Dimension;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import model.entities.Material;
 
 public class MaterialCadastro extends ModeloCadastrar {
     
@@ -17,6 +21,16 @@ public class MaterialCadastro extends ModeloCadastrar {
     public JLabel jlCusto, jlDanoMultiplicavel, jlDanoAdicional, jlFn,  jlPesoMultiplicador;
     
     public MaterialCadastro(){
+        preencherConteudo();
+    } 
+    
+    public MaterialCadastro(int idMaterialParaEdicao){
+        preencherConteudo();
+        prepararParaEdicao(idMaterialParaEdicao);
+    }
+    
+    @Override
+    public void preencherConteudo(){
         Dimension grande = new Dimension(200, 28);
         Dimension pequeno = new Dimension(60, 28);
         
@@ -64,9 +78,32 @@ public class MaterialCadastro extends ModeloCadastrar {
   
         jpCamposDeFiltro.setPreferredSize(new Dimension(jpCamposDeFiltro.getWidth(), jpCamposDeFiltro.getHeight()+50));
         
-        habilitarCampos(false);      
-    } 
-
+        habilitarCampos(false);
+    }
+    
+    @Override
+    public void prepararParaEdicao(int idMaterialParaEdicao){
+               
+        try { 
+            MaterialController controller = new MaterialController();
+            ArrayList<JTextField> camposParaEditar = new ArrayList<>();
+            camposParaEditar.add(jtfId);
+            camposParaEditar.add(jtfNome);
+            camposParaEditar.add(jtfCusto);
+            camposParaEditar.add(jtfDanoMultiplicavel);
+            camposParaEditar.add(jtfDanoAdicional);
+            camposParaEditar.add(jtfFn);
+            camposParaEditar.add(jtfPesoMultiplicador);
+            
+            controller.carregarParaEdicao(idMaterialParaEdicao, camposParaEditar);
+        }catch(Exception e){
+            System.err.println( e.getMessage() );
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro: " + e , JOptionPane.ERROR_MESSAGE);
+        }
+        
+        habilitarCampos(false);
+    }
+        
     @Override
     public void habilitarCampos(boolean logica) {
         jtfNome.setEnabled(logica);
@@ -92,7 +129,7 @@ public class MaterialCadastro extends ModeloCadastrar {
     public void salvarMaterial(String modo){
         
         try{
-            MateriaisController controller = new MateriaisController();
+            MaterialController controller = new MaterialController();
                         
             if (modo.equals("Alterar") ){
                 

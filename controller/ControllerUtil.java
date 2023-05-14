@@ -32,4 +32,16 @@ public class ControllerUtil {
     public int converteParaInt(String string){
         return Integer.parseInt(string);
     }
+    
+    public String converteParaString(Object objeto){
+        if(String.class.isInstance( objeto )){
+            return (String) objeto;
+        } else if(Integer.class.isInstance(objeto)){
+            return Integer.toString( Integer.parseInt( (String) objeto ) );
+        } else if(Double.class.isInstance(objeto)){
+            return Double.toString( Double.parseDouble( (String) objeto ) );
+        }
+        return "";
+    }
+    
 }

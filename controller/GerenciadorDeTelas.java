@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.HashMap;
+import java.util.Map;
 import view.gui.MaterialArquivo;
 import view.gui.MaterialCadastro;
 
@@ -7,7 +9,7 @@ public class GerenciadorDeTelas{
     
     //Vai Crescer infinitamente, precisarei lidar com isso de alguma forma esperta
     private static MaterialArquivo arqMaterial;
-    private static MaterialCadastro cadMaterial;
+    private static Map<String, MaterialCadastro> mapaCadastroMaterial = new HashMap<>();
     
     public static MaterialArquivo getArqMaterial() {
         if(arqMaterial == null){
@@ -16,11 +18,14 @@ public class GerenciadorDeTelas{
         return arqMaterial ;
     }
 
-    public static MaterialCadastro getCadMaterial() {
-        if(cadMaterial == null){
-            cadMaterial = new MaterialCadastro();
+    public static MaterialCadastro getCadMaterial(String... parametros) {
+        String chave = (String) parametros[0];
+        
+        if (!mapaCadastroMaterial.containsKey(chave)) {
+            mapaCadastroMaterial.put(chave, new MaterialCadastro(Integer.parseInt( parametros[1] ) ));
         }
-        return cadMaterial ;
+
+        return mapaCadastroMaterial.get(chave);
     }
-    
+
 }

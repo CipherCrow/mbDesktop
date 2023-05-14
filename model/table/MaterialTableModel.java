@@ -3,17 +3,17 @@ package model.table;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import model.entities.MaterialItem;
+import model.entities.Material;
 
 public class MaterialTableModel extends AbstractTableModel {
 
-    private ArrayList<MaterialItem> materiais;
+    private ArrayList<Material> materiais;
     private String[] colunas = TableEnum.Material.getCamposTabela();
-    public MaterialTableModel(ArrayList<MaterialItem> materiais) {
+    public MaterialTableModel(ArrayList<Material> materiais) {
         this.materiais = materiais;
     }
 
-    public void setMateriais(ArrayList<MaterialItem> materiais) {
+    public void setMateriais(ArrayList<Material> materiais) {
         this.materiais = materiais;
         fireTableDataChanged(); // Notifica a tabela que houve mudanças nos dados
     }
@@ -30,7 +30,7 @@ public class MaterialTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        MaterialItem material = materiais.get(rowIndex);
+        Material material = materiais.get(rowIndex);
 
         switch (columnIndex) {
             case 0:
@@ -55,7 +55,7 @@ public class MaterialTableModel extends AbstractTableModel {
         return colunas[column];
     }
     
-    public MaterialItem getObjeto(int rowIndex){
+    public Material getObjeto(int rowIndex){
         return materiais.get(rowIndex);
     }
 }
