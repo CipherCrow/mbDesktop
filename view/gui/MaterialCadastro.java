@@ -1,19 +1,13 @@
 package view.gui;
 
-import controller.Controller;
-import model.table.TableEnum;
-import controller.GerenciadorDeTelas;
 import controller.MaterialController;
 import exceptions.CamposInvalidosException;
 import java.awt.Dimension;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import model.entities.Material;
 
 public class MaterialCadastro extends ModeloCadastrar {
     

@@ -22,9 +22,13 @@ public class GerenciadorDeTelas{
         String chave = (String) parametros[0];
         
         if (!mapaCadastroMaterial.containsKey(chave)) {
-            mapaCadastroMaterial.put(chave, new MaterialCadastro(Integer.parseInt( parametros[1] ) ));
+            if( parametros.length == 1){
+                mapaCadastroMaterial.put(chave, new MaterialCadastro());
+            }else{
+                mapaCadastroMaterial.put(chave, new MaterialCadastro(Integer.parseInt( parametros[1] ) ));
+            }
         }
-
+        
         return mapaCadastroMaterial.get(chave);
     }
 
