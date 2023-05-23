@@ -45,6 +45,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     }
     
     public abstract void habilitarCampos(boolean logica);
+    public abstract void habilitarEdicao(boolean logica);
     public abstract void limparCampos();
     public abstract void salvarMaterial(String modo);
     public abstract void preencherConteudo();

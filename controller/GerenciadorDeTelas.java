@@ -19,13 +19,15 @@ public class GerenciadorDeTelas{
     }
 
     public static MaterialCadastro getCadMaterial(String... parametros) {
-        String chave = (String) parametros[0];
+        String chave = parametros[0];
         
         if (!mapaCadastroMaterial.containsKey(chave)) {
             if( parametros.length == 1){
                 mapaCadastroMaterial.put(chave, new MaterialCadastro());
             }else{
-                mapaCadastroMaterial.put(chave, new MaterialCadastro(Integer.parseInt( parametros[1] ) ));
+                System.out.println(parametros[1]);
+                MaterialCadastro cadastro = new MaterialCadastro( Integer.valueOf( parametros[1] ));
+                mapaCadastroMaterial.put(chave, cadastro);
             }
         }
         

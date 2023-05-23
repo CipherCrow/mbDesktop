@@ -101,17 +101,17 @@ public class MaterialController implements Controller {
     @Override
     public void carregarParaEdicao(Object... parametro) throws Exception {
         MaterialDAO materialDAO =  new MaterialDAO( new ConnectionFactory().getConexao() );
-        Material materialParaEdicao = (Material) materialDAO.findByID( Integer.parseInt( (String) parametro[0] ));
+        Material materialParaEdicao = (Material) materialDAO.findByID( (Integer) parametro[0] );
         
         ArrayList<JTextField> camposParaEdicao = (ArrayList<JTextField>) parametro[1];
         
-        camposParaEdicao.get(0).setText( util.converteParaString( materialParaEdicao.getId() ));
-        camposParaEdicao.get(1).setText( util.converteParaString( materialParaEdicao.getNome() ));
-        camposParaEdicao.get(2).setText( util.converteParaString( materialParaEdicao.getMultiplicadorDeCusto() ));
-        camposParaEdicao.get(3).setText( util.converteParaString( materialParaEdicao.getMultiplicadorDeDano() ));
-        camposParaEdicao.get(4).setText( util.converteParaString( materialParaEdicao.getModificadorDeDano() ));
-        camposParaEdicao.get(5).setText( util.converteParaString( materialParaEdicao.getModificadorDeFn() ));
-        camposParaEdicao.get(6).setText( util.converteParaString( materialParaEdicao.getMultiplicadorDePeso() ));
+        camposParaEdicao.get(0).setText( util.castParaString( materialParaEdicao.getId() ));
+        camposParaEdicao.get(1).setText( util.castParaString( materialParaEdicao.getNome() ));
+        camposParaEdicao.get(2).setText( util.castParaString( materialParaEdicao.getMultiplicadorDeCusto() ));
+        camposParaEdicao.get(3).setText( util.castParaString( materialParaEdicao.getMultiplicadorDeDano() ));
+        camposParaEdicao.get(4).setText( util.castParaString( materialParaEdicao.getModificadorDeDano() ));
+        camposParaEdicao.get(5).setText( util.castParaString( materialParaEdicao.getModificadorDeFn() ));
+        camposParaEdicao.get(6).setText( util.castParaString( materialParaEdicao.getMultiplicadorDePeso() ));
         
 //        jtfId.setText( Integer.toString( materialParaEdicao.getId() ));
 //        jtfNome.setText( materialParaEdicao.getNome() );

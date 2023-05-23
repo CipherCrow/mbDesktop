@@ -33,13 +33,13 @@ public class ControllerUtil {
         return Integer.parseInt(string);
     }
     
-    public String converteParaString(Object objeto){
+    public String castParaString(Object objeto){
         if(String.class.isInstance( objeto )){
             return (String) objeto;
         } else if(Integer.class.isInstance(objeto)){
-            return Integer.toString( Integer.parseInt( (String) objeto ) );
+            return Integer.toString((Integer) objeto );
         } else if(Double.class.isInstance(objeto)){
-            return Double.toString( Double.parseDouble( (String) objeto ) );
+            return Double.toString( (Double) objeto  );
         }
         return "";
     }

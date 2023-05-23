@@ -2,11 +2,9 @@ package view.gui;
 
 import controller.GerenciadorDeTelas;
 import controller.PopuladorDeBanco;
-import java.awt.Component;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
-import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
@@ -41,42 +39,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao iniciar banco de dados da apicação, por gentileza reinicie a aplicação!", "Erro " + e, JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    public void abrirJanela(JInternalFrame janela){
-        try{ 
-            Component[] componentes = jdpAreaDeTrabalho.getComponents();
-            boolean jaExisteComponente = false;
-            
-            for(int i=0; i < jdpAreaDeTrabalho.getComponentCount(); i++){
-                //Se for o mesmo componente e a janela não estiver visivel significa que foi fechada, portanto:
-                if (componentes[i].equals( janela )){
-                    jaExisteComponente = true;
-                }
-            }
-            
-            if(jaExisteComponente){
-                janela.setClosed(false);
-            }else{
-                //Realiza calculos para gerar a janela centralizada;
-                int larguraDesktop = jdpAreaDeTrabalho.getWidth();
-                int alturaDesktop = jdpAreaDeTrabalho.getHeight();
-                
-                int larguraFrame = janela.getWidth();
-                int alturaFrame = janela.getHeight();
-                janela.setLocation( larguraDesktop / 2 - larguraFrame / 2, alturaDesktop / 2 - alturaFrame / 2);
-                
-                jdpAreaDeTrabalho.add( janela );
-            }
-            
-            janela.setVisible(true);
-            janela.setSelected(true);
-            
-        }catch(Exception e){
-            System.err.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Erro ao Tentar Abrir a Janela"+ janela.getTitle() +"!", "Erro", JOptionPane.ERROR_MESSAGE);
-        }          
-    }
-    
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -293,11 +256,11 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCadMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadMaterialActionPerformed
-        abrirJanela(GerenciadorDeTelas.getCadMaterial("Novo"));
+        ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getCadMaterial("Novo"));
     }//GEN-LAST:event_jmiCadMaterialActionPerformed
 
     private void jmiMateriaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMateriaisActionPerformed
-        abrirJanela(GerenciadorDeTelas.getArqMaterial());
+        ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getArqMaterial());
     }//GEN-LAST:event_jmiMateriaisActionPerformed
 
     public static void main(String args[]) {

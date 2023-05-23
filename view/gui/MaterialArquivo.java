@@ -4,6 +4,7 @@ import controller.GerenciadorDeTelas;
 import controller.MaterialController;
 import exceptions.CamposInvalidosException;
 import java.sql.SQLException;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
 public class MaterialArquivo extends ModeloArquivo{
@@ -35,6 +36,7 @@ public class MaterialArquivo extends ModeloArquivo{
     @Override
     public void removerFiltro() {
         atualizarTabela();
+        jtfNome.setText("");
     }
     
     @Override
@@ -61,7 +63,8 @@ public class MaterialArquivo extends ModeloArquivo{
     @Override
     public void carregaEdicaoSelecionado() {
         MaterialController controller = new MaterialController();
+        int idDoSelecionadoNoBanco = jtTabela.getSelectedRow() + 1;
         
-        GerenciadorDeTelas.getArqMaterial();
+        ViewUtil.abrirJanela( (JDesktopPane) this.getParent() , GerenciadorDeTelas.getCadMaterial("Alterar" , idDoSelecionadoNoBanco+""));
     }
 }

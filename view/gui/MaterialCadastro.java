@@ -90,9 +90,12 @@ public class MaterialCadastro extends ModeloCadastrar {
             camposParaEditar.add(jtfPesoMultiplicador);
             
             controller.carregarParaEdicao(idMaterialParaEdicao, camposParaEditar);
+            setTitle("Editando Material");
+            
         }catch(Exception e){
             System.err.println( e.getMessage() );
-            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro: " + e , JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
         }
         
         habilitarCampos(false);
@@ -106,6 +109,7 @@ public class MaterialCadastro extends ModeloCadastrar {
         jtfDanoAdicional.setEnabled(logica);
         jtfFn.setEnabled(logica);
         jtfPesoMultiplicador.setEnabled(logica);   
+        limparCampos();
     }
     
     @Override
@@ -117,6 +121,11 @@ public class MaterialCadastro extends ModeloCadastrar {
         jtfDanoAdicional.setText("");
         jtfFn.setText("");
         jtfPesoMultiplicador.setText("");   
+    }
+    
+    @Override
+    public void habilitarEdicao(boolean logica){
+        
     }
     
     @Override
@@ -155,11 +164,12 @@ public class MaterialCadastro extends ModeloCadastrar {
             //controller.carregarMateriais(TableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
             
         }catch(CamposInvalidosException e){
-            JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar: " + e, JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
         }
         catch(Exception e){
-            System.err.println( e.getMessage() );
-            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro ao Salvar: " + e , JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
         }
         
     }

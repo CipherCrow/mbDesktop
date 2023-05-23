@@ -4,8 +4,6 @@
  */
 package view.gui;
 
-import javax.swing.Icon;
-
 /**
  *
  * @author Administrador
@@ -73,7 +71,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
 
         jpImagem.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jpImagem.setPreferredSize(new java.awt.Dimension(160, 160));
-        jpImagem.setLayout(new java.awt.GridLayout());
+        jpImagem.setLayout(new java.awt.GridLayout(1, 0));
 
         jlImagemDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpImagem.add(jlImagemDescricao);
@@ -85,6 +83,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
         jbDetalhe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/arquivo/icons8-info-25.png"))); // NOI18N
         jbDetalhe.setMnemonic('d');
         jbDetalhe.setText("Detalhes");
+        jbDetalhe.setEnabled(false);
         jbDetalhe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbDetalheActionPerformed(evt);
