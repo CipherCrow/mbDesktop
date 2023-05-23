@@ -196,4 +196,27 @@ public class MaterialDAO implements DAO{
         
         return material;
     }
+
+    @Override
+    public void deleteByID(int idParaDelecao) throws Exception {
+        String query = "DELETE FROM material WHERE cod_material = ?";
+        
+        try( PreparedStatement sql = conexao.prepareStatement(query) ){
+            
+            sql.setInt(1, idParaDelecao );
+            sql.execute();
+            
+        }catch(Exception e){
+            conexao.rollback();            
+            throw e;
+
+        }finally{
+            try {
+                conexao.commit();
+                conexao.close();
+            } catch (SQLException e) {
+                throw e;
+            }
+        }
+    }
 }

@@ -2,6 +2,8 @@
 package view.gui;
 
 import controller.GerenciadorDeTelas;
+import controller.MaterialController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -68,6 +70,24 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     public void resetarTituloIcone(String titulo, String caminhoIcone){
         setTitle(titulo);
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource(caminhoIcone)));
+    }
+    
+    public void deletarRegistro(){
+        int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir o registro?", "Confirmação de exclusão", JOptionPane.YES_NO_OPTION);
+        if (opcao == JOptionPane.YES_OPTION) {
+            try {
+                MaterialController controller = new MaterialController();
+                controller.deletar( jtfId.getText() );
+                GerenciadorDeTelas.removerCadMaterial( jtfId.getText() );
+                
+                JOptionPane.showMessageDialog(null, "Registro Deletado Com Sucesso", "Sucesso ao Deletar", JOptionPane.INFORMATION_MESSAGE);
+                setVisible(false);
+                setClosed(true);
+            } catch (Exception e) {
+                ExceptionHandler.exibirExcecaoDialog(e);
+            }
+            
+        }
     }
     
     public abstract void habilitarCampos(boolean logica);
@@ -141,6 +161,11 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         jbDeletar.setMnemonic('d');
         jbDeletar.setText("Deletar");
         jbDeletar.setEnabled(false);
+        jbDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDeletarActionPerformed(evt);
+            }
+        });
 
         jbSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-checkmark-25.png"))); // NOI18N
         jbSalvar.setMnemonic('s');
@@ -232,6 +257,10 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
         controlarAlteracao(true);
     }//GEN-LAST:event_jbAlterarActionPerformed
+
+    private void jbDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeletarActionPerformed
+        deletarRegistro();
+    }//GEN-LAST:event_jbDeletarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

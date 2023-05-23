@@ -33,5 +33,10 @@ public class GerenciadorDeTelas{
         
         return mapaCadastroMaterial.get(chave);
     }
-
+    
+    public static void removerCadMaterial(String... parametros) {
+        String chave = parametros[0];
+        mapaCadastroMaterial.remove( chave );
+    }
+    
 }

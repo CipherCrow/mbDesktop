@@ -63,8 +63,11 @@ public class MaterialArquivo extends ModeloArquivo{
     @Override
     public void carregaEdicaoSelecionado() {
         MaterialController controller = new MaterialController();
-        int idDoSelecionadoNoBanco = jtTabela.getSelectedRow() + 1;
+        int selecionado = jtTabela.getSelectedRow();
+        int idDoSelecionadoNoBanco = selecionado + 1;
         
-        ViewUtil.abrirJanela( (JDesktopPane) this.getParent() , GerenciadorDeTelas.getCadMaterial("Alterar" , idDoSelecionadoNoBanco+""));
+        ViewUtil.abrirJanela( (JDesktopPane) this.getParent() , GerenciadorDeTelas.getCadMaterial(
+                                                                                        "Alterar-" + selecionado ,
+                                                                                        idDoSelecionadoNoBanco + ""));
     }
 }

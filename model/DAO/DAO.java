@@ -6,4 +6,5 @@ public interface DAO {
     public void update(Object objeto) throws Exception;
     public Object findByName(Object... parametros) throws Exception;
     public Object findByID(int idProcurado) throws Exception;
+    public void deleteByID(int idParaDelecao)throws Exception;
 }

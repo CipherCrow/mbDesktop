@@ -9,6 +9,7 @@ public interface Controller {
     public void atualizaDescricao(Object... parametros) throws Exception;
     public void filtrar(Object... parametrosETabela) throws Exception;
     public void inserir(String... campos) throws Exception;
-    public void deletar();
+    public void deletar(String iD) throws Exception;
     public void alterar(String... campos) throws Exception;
+    public void realizarValidacoesDosCampos(String... campos) throws Exception;
 }

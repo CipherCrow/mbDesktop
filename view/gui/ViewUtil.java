@@ -3,7 +3,6 @@ package view.gui;
 import java.awt.Component;
 import javax.swing.JInternalFrame;
 import javax.swing.JDesktopPane;
-import javax.swing.JOptionPane;
 
 public class ViewUtil {
     

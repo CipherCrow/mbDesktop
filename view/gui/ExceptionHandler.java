@@ -19,7 +19,7 @@ public class ExceptionHandler {
         // Obter o stack trace da exceção
         StringWriter stackTraceWriter = new StringWriter();
         excecao.printStackTrace(new PrintWriter(stackTraceWriter));
-          String stackTrace = "Um erro ocorreu e fez a aplicação travar!\nPoderia fazer a gentileza de contatar o desenvolvedor? O código abaixo é copiavel, lembre-se de envia-lo"
+          String stackTrace = "Um erro ocorreu e fez a aplicação não agir como deveria!\nPoderia fazer a gentileza de contatar o desenvolvedor? O código abaixo é copiavel, lembre-se de envia-lo"
                 + " junto à mensagem para que o desenvolvedor possa encontrar a solução para o problema! \n\n";
 
         System.out.println(stackTrace);

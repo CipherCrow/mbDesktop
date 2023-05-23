@@ -71,6 +71,7 @@ public class MaterialController implements Controller {
         new MaterialDAO( new ConnectionFactory().getConexao() ).update( material ); 
     }
     
+    @Override
     public void realizarValidacoesDosCampos(String... campos) throws Exception{
         util.validarCampoNaoVazio(campos[0]);
         util.validarDecimal(campos[1]);
@@ -81,8 +82,10 @@ public class MaterialController implements Controller {
     }
         
     @Override
-    public void deletar() {
-        
+    public void deletar(String iD) throws Exception {
+        int iDeletar = Integer.valueOf(iD);
+        MaterialDAO materialDAO = new MaterialDAO( new ConnectionFactory().getConexao() );
+        materialDAO.deleteByID( iDeletar );
     }
 
     @Override
