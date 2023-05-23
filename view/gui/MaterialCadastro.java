@@ -16,11 +16,13 @@ public class MaterialCadastro extends ModeloCadastrar {
     
     public MaterialCadastro(){
         preencherConteudo();
+        iniciarModoCadastro();
     } 
     
     public MaterialCadastro(int idMaterialParaEdicao){
         preencherConteudo();
         prepararParaEdicao(idMaterialParaEdicao);
+        iniciarModoAlteracao();
     }
     
     @Override
@@ -90,7 +92,7 @@ public class MaterialCadastro extends ModeloCadastrar {
             camposParaEditar.add(jtfPesoMultiplicador);
             
             controller.carregarParaEdicao(idMaterialParaEdicao, camposParaEditar);
-            setTitle("Editando Material");
+            setTitle("Editando "+jtfNome.getText());
             
         }catch(Exception e){
             System.err.println( e.getMessage() );
@@ -98,7 +100,6 @@ public class MaterialCadastro extends ModeloCadastrar {
             ExceptionHandler.exibirExcecaoDialog(e);
         }
         
-        habilitarCampos(false);
     }
         
     @Override
@@ -109,7 +110,6 @@ public class MaterialCadastro extends ModeloCadastrar {
         jtfDanoAdicional.setEnabled(logica);
         jtfFn.setEnabled(logica);
         jtfPesoMultiplicador.setEnabled(logica);   
-        limparCampos();
     }
     
     @Override
@@ -122,20 +122,14 @@ public class MaterialCadastro extends ModeloCadastrar {
         jtfFn.setText("");
         jtfPesoMultiplicador.setText("");   
     }
-    
-    @Override
-    public void habilitarEdicao(boolean logica){
         
-    }
-    
     @Override
-    public void salvarMaterial(String modo){
+    public void salvarMaterial(){
         
         try{
             MaterialController controller = new MaterialController();
                         
-            if (modo.equals("Alterar") ){
-                
+            if (getModo().equals("Alt") ){
                 controller.alterar(
                     jtfId.getText(),
                     jtfNome.getText(),
@@ -145,6 +139,8 @@ public class MaterialCadastro extends ModeloCadastrar {
                     jtfFn.getText(),
                     jtfPesoMultiplicador.getText());
                 
+                JOptionPane.showMessageDialog(null, "Material Alterado Com Sucesso", "Sucesso ao Alterar Material", JOptionPane.INFORMATION_MESSAGE);
+                limparCampos();
             }else{
                 controller.inserir(
                     jtfNome.getText(),
@@ -153,19 +149,17 @@ public class MaterialCadastro extends ModeloCadastrar {
                     jtfDanoAdicional.getText(),
                     jtfFn.getText(),
                     jtfPesoMultiplicador.getText());
-            }
-
+                
+                JOptionPane.showMessageDialog(null, "Material Salvo Com Sucesso", "Sucesso ao Salvar Material", JOptionPane.INFORMATION_MESSAGE);
+                limparCampos();
+            }  
             
-            limparCampos();
-            JOptionPane.showMessageDialog(null, "Material Salvo Com Sucesso", "Sucesso ao Salvar Material", JOptionPane.INFORMATION_MESSAGE);
             habilitarCampos(false);
             resetCadastro();
             
-            //controller.carregarMateriais(TableEnum.Material.getCamposTabela(), GerenciadorDeTelas.getArqMaterial().jtTabela);
-            
         }catch(CamposInvalidosException e){
             e.printStackTrace();
-            ExceptionHandler.exibirExcecaoDialog(e);
+            JOptionPane.showMessageDialog(null, "Algum dos campos inseridos está nulo ou é invalido","Campos inválidos!", JOptionPane.ERROR_MESSAGE);
         }
         catch(Exception e){
             e.printStackTrace();

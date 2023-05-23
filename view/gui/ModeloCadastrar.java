@@ -9,11 +9,60 @@ import controller.GerenciadorDeTelas;
  */
 public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
        
-    /**
-     * Creates new form ModeloCadastrar
-     */
+    private String modo;
+    
     public ModeloCadastrar() {
         initComponents();
+    }
+    
+    protected void iniciarModoCadastro(){
+        this.modo = "Cad";
+        iniciarTela();
+    }
+    
+    protected void iniciarModoAlteracao(){
+        this.modo = "Alt";
+        iniciarTela();
+    }
+    
+    protected String getModo(){
+        return this.modo;
+    }
+    
+    public void iniciarTela(){
+        if(modo.equals("Alt")){
+            jbAlterar.setEnabled(true);
+            jbDeletar.setEnabled(true);
+        } else {
+            jbNovo.setEnabled(true);
+        }
+    }
+    
+    public void controlarCadastro(boolean modo){
+        jbNovo.setEnabled(!modo);
+        resetBotoes(modo);
+        habilitarCampos(modo);
+    }
+    
+    public void resetCadastro(){
+        if(modo.equals("Alt")){
+            controlarAlteracao(false);
+        } else {
+            controlarCadastro(false);
+            limparCampos();
+        }
+    }
+    
+    public void resetBotoes(boolean modo){
+        jbSalvar.setEnabled(modo);
+        jbCancelar.setEnabled(modo);
+    }
+    
+    public void controlarAlteracao(boolean modo){
+        jbAlterar.setEnabled(!modo);
+        jbDeletar.setEnabled(!modo);
+        resetBotoes(modo);
+        habilitarCampos(modo);      
     }
     
     public void resetarTituloIcone(String titulo, String caminhoIcone){
@@ -21,33 +70,9 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource(caminhoIcone)));
     }
     
-    public void modoCadastro(boolean modo){
-        jbNovo.setEnabled(!modo);
-        jbSalvar.setEnabled(modo);
-        jbCancelar.setEnabled(modo);
-        
-        habilitarCampos(modo);
-    }
-    
-    public void resetCadastro(){
-        modoCadastro(false);
-        limparCampos();
-    }
-    
-    public void modoAlteracao(boolean modo){
-        jbNovo.setEnabled(!modo);
-        jbAlterar.setEnabled(modo);
-        
-        jbSalvar.setEnabled(modo);
-        jbCancelar.setEnabled(modo);
-        
-        habilitarCampos(modo);
-    }
-    
     public abstract void habilitarCampos(boolean logica);
-    public abstract void habilitarEdicao(boolean logica);
     public abstract void limparCampos();
-    public abstract void salvarMaterial(String modo);
+    public abstract void salvarMaterial();
     public abstract void preencherConteudo();
     public abstract void prepararParaEdicao(int idMaterialParaEdicao);
     /**
@@ -95,6 +120,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         jbNovo.setMnemonic('n');
         jbNovo.setText("Novo");
         jbNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jbNovo.setEnabled(false);
         jbNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbNovoActionPerformed(evt);
@@ -105,6 +131,11 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         jbAlterar.setMnemonic('a');
         jbAlterar.setText("Alterar");
         jbAlterar.setEnabled(false);
+        jbAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAlterarActionPerformed(evt);
+            }
+        });
 
         jbDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/cadastros/icons8-trash-20.png"))); // NOI18N
         jbDeletar.setMnemonic('d');
@@ -186,7 +217,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
-        modoCadastro(true);
+        controlarCadastro(true);
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
@@ -194,10 +225,13 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbCancelarActionPerformed
     
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
-        salvarMaterial("Salvar");
+        salvarMaterial();
         GerenciadorDeTelas.getArqMaterial().atualizarTabela();
     }//GEN-LAST:event_jbSalvarActionPerformed
 
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
+        controlarAlteracao(true);
+    }//GEN-LAST:event_jbAlterarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

@@ -56,7 +56,7 @@ public class MaterialController implements Controller {
     
     @Override
     public void alterar(String... campos) throws Exception {
-        realizarValidacoesDosCampos(campos);
+        realizarValidacoesDosCampos(campos[1],campos[2],campos[3],campos[4],campos[5],campos[6]);
         
         Material material = new Material();
         
