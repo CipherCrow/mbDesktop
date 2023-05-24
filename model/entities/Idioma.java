@@ -1,18 +1,27 @@
 package model.entities;
 
-import java.util.ArrayList;
-
 class Idioma {
 
+    private int id;
     private String nome;
-    private String[] falantesComuns = {};
     private String idiomaDeReferencia;
+    private String descricao;
 
     public Idioma(){}
 
-    public Idioma(String nome, String idiomaDeReferencia) {
+    public Idioma(int id, String nome, String idiomaDeReferencia, String descricao) {
+        this.id = id;
         this.nome = nome;
         this.idiomaDeReferencia = idiomaDeReferencia;
+        this.descricao = descricao;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -21,14 +30,6 @@ class Idioma {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String[] getFalantesComuns() {
-        return falantesComuns;
-    }
-
-    public void setFalantesComuns(String[] falantesComuns) {
-        this.falantesComuns = falantesComuns;
     }
 
     public String getIdiomaDeReferencia() {

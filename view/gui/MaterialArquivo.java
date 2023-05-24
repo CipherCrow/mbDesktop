@@ -4,6 +4,8 @@ import controller.GerenciadorDeTelas;
 import controller.MaterialController;
 import exceptions.CamposInvalidosException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
@@ -62,11 +64,16 @@ public class MaterialArquivo extends ModeloArquivo{
 
     @Override
     public void carregaEdicaoSelecionado() {
-        MaterialController controller = new MaterialController();
-        int idDoSelecionadoNoBanco = controller.getIdDoSelecionado( jtTabela );
-       
-        ViewUtil.abrirJanela( (JDesktopPane) this.getParent() , GerenciadorDeTelas.getCadMaterial(
-                                                                                        "Alterar-" + idDoSelecionadoNoBanco ,
-                                                                                        idDoSelecionadoNoBanco + ""));
+        try {
+            MaterialController controller = new MaterialController();
+            int idDoSelecionadoNoBanco = controller.getIdDoSelecionado( jtTabela );
+            
+            ViewUtil.abrirJanela( (JDesktopPane) this.getParent() , GerenciadorDeTelas.getCadMaterial(
+                    "Alterar-" + idDoSelecionadoNoBanco ,
+                    idDoSelecionadoNoBanco + ""));
+        } catch (Exception e) {
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
+        }
     }
 }

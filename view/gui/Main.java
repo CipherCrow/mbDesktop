@@ -198,6 +198,11 @@ public class Main extends javax.swing.JFrame {
         jmiCadIdioma.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiCadIdioma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-spoken-20(1).png"))); // NOI18N
         jmiCadIdioma.setText("Idioma");
+        jmiCadIdioma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCadIdiomaActionPerformed(evt);
+            }
+        });
         jmCadastrar.add(jmiCadIdioma);
 
         jmiCadItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -256,12 +261,21 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCadMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadMaterialActionPerformed
-        ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getCadMaterial("Novo"));
+        try {
+            ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getCadMaterial("Novo","Novo"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
+        }
     }//GEN-LAST:event_jmiCadMaterialActionPerformed
 
     private void jmiMateriaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMateriaisActionPerformed
         ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getArqMaterial());
     }//GEN-LAST:event_jmiMateriaisActionPerformed
+
+    private void jmiCadIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadIdiomaActionPerformed
+        ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getArqMaterial());
+    }//GEN-LAST:event_jmiCadIdiomaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

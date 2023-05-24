@@ -9,19 +9,19 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class MaterialCadastro extends ModeloCadastrar {
+public class IdiomaCadastro extends ModeloCadastrar {
     
-    public JTextField jtfCusto, jtfDanoMultiplicavel, jtfDanoAdicional, jtfFn, jtfPesoMultiplicador;
-    public JLabel jlCusto, jlDanoMultiplicavel, jlDanoAdicional, jlFn,  jlPesoMultiplicador;
+    public JTextField jtfIdiomaReferencia;
+    public JLabel jlIdiomaReferencia;
     
-    public MaterialCadastro(){
+    public IdiomaCadastro(){
         preencherConteudo();
         iniciarModoCadastro();
     } 
     
-    public MaterialCadastro(int idMaterialParaEdicao){
+    public IdiomaCadastro(int idIdiomaParaEdicao){
         preencherConteudo();
-        prepararParaEdicao(idMaterialParaEdicao);
+        prepararParaEdicao(idIdiomaParaEdicao);
         iniciarModoAlteracao();
     }
     
@@ -31,46 +31,18 @@ public class MaterialCadastro extends ModeloCadastrar {
         Dimension pequeno = new Dimension(60, 28);
         
         resetarTituloIcone(
-                "Cadastrar Material"
-               ,"/assets/images/submenu/icons8-medieval-20(1).png");
+                "Cadastrar Idioma"
+               ,"/assets/images/submenu/icons8-spoken-20(1).png");
 
         jtfId.setPreferredSize(pequeno);       
         jtfNome.setPreferredSize(grande);
         
-        jlCusto = new JLabel("Custo (*)");       
-        jtfCusto = new JTextField();
-        jtfCusto.setPreferredSize(pequeno);
-        
-        jlDanoMultiplicavel = new JLabel("Dano (*)");       
-        jtfDanoMultiplicavel = new JTextField();
-        jtfDanoMultiplicavel.setPreferredSize(pequeno);
-        
-        jlDanoAdicional = new JLabel("Dano (+)");       
-        jtfDanoAdicional = new JTextField();
-        jtfDanoAdicional.setPreferredSize(pequeno);
-        
-        jlFn = new JLabel("Fn (+)");       
-        jtfFn = new JTextField();
-        jtfFn.setPreferredSize(pequeno);
-        
-        jlPesoMultiplicador = new JLabel("Peso (*)");       
-        jtfPesoMultiplicador = new JTextField();
-        jtfPesoMultiplicador.setPreferredSize(pequeno);
-        
-        jpCamposDeFiltro.add(jlCusto);
-        jpCamposDeFiltro.add(jtfCusto);
-        
-        jpCamposDeFiltro.add(jlDanoMultiplicavel);
-        jpCamposDeFiltro.add(jtfDanoMultiplicavel);
-        
-        jpCamposDeFiltro.add(jlDanoAdicional);
-        jpCamposDeFiltro.add(jtfDanoAdicional);
-        
-        jpCamposDeFiltro.add(jlFn);
-        jpCamposDeFiltro.add(jtfFn);
-        
-        jpCamposDeFiltro.add(jlPesoMultiplicador);
-        jpCamposDeFiltro.add(jtfPesoMultiplicador);
+        jlIdiomaReferencia = new JLabel("Idioma De Referencia");       
+        jtfIdiomaReferencia = new JTextField();
+        jtfIdiomaReferencia.setPreferredSize(grande);
+                
+        jpCamposDeFiltro.add(jlIdiomaReferencia);
+        jpCamposDeFiltro.add(jtfIdiomaReferencia);
   
         jpCamposDeFiltro.setPreferredSize(new Dimension(jpCamposDeFiltro.getWidth(), jpCamposDeFiltro.getHeight()+50));
         
@@ -85,11 +57,8 @@ public class MaterialCadastro extends ModeloCadastrar {
             ArrayList<JTextField> camposParaEditar = new ArrayList<>();
             camposParaEditar.add(jtfId);
             camposParaEditar.add(jtfNome);
-            camposParaEditar.add(jtfCusto);
-            camposParaEditar.add(jtfDanoMultiplicavel);
-            camposParaEditar.add(jtfDanoAdicional);
-            camposParaEditar.add(jtfFn);
-            camposParaEditar.add(jtfPesoMultiplicador);
+            camposParaEditar.add(jtfIdiomaReferencia);
+//            camposParaEditar.add(jtfDanoMultiplicavel);
             
             controller.carregarParaEdicao(idMaterialParaEdicao, camposParaEditar);
             setTitle("Editando "+jtfNome.getText());
@@ -105,22 +74,16 @@ public class MaterialCadastro extends ModeloCadastrar {
     @Override
     public void habilitarCampos(boolean logica) {
         jtfNome.setEnabled(logica);
-        jtfCusto.setEnabled(logica);
-        jtfDanoMultiplicavel.setEnabled(logica);
-        jtfDanoAdicional.setEnabled(logica);
-        jtfFn.setEnabled(logica);
-        jtfPesoMultiplicador.setEnabled(logica);   
+        jtfIdiomaReferencia.setEnabled(logica);
+//        jtfDanoMultiplicavel.setEnabled(logica);
     }
     
     @Override
     public void limparCampos() {
         jtfId.setText("");
         jtfNome.setText("");
-        jtfCusto.setText("");
-        jtfDanoMultiplicavel.setText("");
-        jtfDanoAdicional.setText("");
-        jtfFn.setText("");
-        jtfPesoMultiplicador.setText("");   
+        jtfIdiomaReferencia.setText("");
+//        jtfDanoMultiplicavel.setText(""); 
     }
         
     @Override
@@ -133,22 +96,16 @@ public class MaterialCadastro extends ModeloCadastrar {
                 controller.alterar(
                     jtfId.getText(),
                     jtfNome.getText(),
-                    jtfCusto.getText(),
-                    jtfDanoMultiplicavel.getText(),
-                    jtfDanoAdicional.getText(),
-                    jtfFn.getText(),
-                    jtfPesoMultiplicador.getText());
-                
+                    jtfIdiomaReferencia.getText()
+//                    jtfDanoMultiplicavel.getText(),
+                );
                 JOptionPane.showMessageDialog(null, "Material Alterado Com Sucesso", "Sucesso ao Alterar Material", JOptionPane.INFORMATION_MESSAGE);
             }else{
                 controller.inserir(
                     jtfNome.getText(),
-                    jtfCusto.getText(),
-                    jtfDanoMultiplicavel.getText(),
-                    jtfDanoAdicional.getText(),
-                    jtfFn.getText(),
-                    jtfPesoMultiplicador.getText());
-                
+                    jtfIdiomaReferencia.getText()
+//                    jtfDanoMultiplicavel.getText(),
+                );
                 JOptionPane.showMessageDialog(null, "Material Salvo Com Sucesso", "Sucesso ao Salvar Material", JOptionPane.INFORMATION_MESSAGE);
                 limparCampos();
             }  
