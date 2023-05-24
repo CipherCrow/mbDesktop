@@ -86,6 +86,9 @@ public class MaterialController implements Controller {
         int iDeletar = Integer.valueOf(iD);
         MaterialDAO materialDAO = new MaterialDAO( new ConnectionFactory().getConexao() );
         materialDAO.deleteByID( iDeletar );
+        JTable tabela = GerenciadorDeTelas.getArqMaterial().jtTabela;
+        
+        carregarTudo( tabela );
     }
 
     @Override
@@ -123,6 +126,14 @@ public class MaterialController implements Controller {
 //        jtfDanoAdicional.setText( Integer.toString( materialParaEdicao.getModificadorDeDano() ) );
 //        jtfFn.setText( Integer.toString( materialParaEdicao.getModificadorDeFn() ) );
 //        jtfPesoMultiplicador.setText( Double.toString( materialParaEdicao.getMultiplicadorDePeso() ) );       
+    }
+    @Override
+    public int getIdDoSelecionado(Object... parametros) {
+        JTable tabela = (JTable) parametros[0];
+        int selecionado = tabela.getSelectedRow();
+        MaterialTableModel model = (MaterialTableModel) tabela.getModel();
+        Material material = model.getObjeto( selecionado );
+        return material.getId();
     }
 
 }

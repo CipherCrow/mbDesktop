@@ -140,7 +140,6 @@ public class MaterialCadastro extends ModeloCadastrar {
                     jtfPesoMultiplicador.getText());
                 
                 JOptionPane.showMessageDialog(null, "Material Alterado Com Sucesso", "Sucesso ao Alterar Material", JOptionPane.INFORMATION_MESSAGE);
-                limparCampos();
             }else{
                 controller.inserir(
                     jtfNome.getText(),

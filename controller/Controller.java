@@ -12,4 +12,5 @@ public interface Controller {
     public void deletar(String iD) throws Exception;
     public void alterar(String... campos) throws Exception;
     public void realizarValidacoesDosCampos(String... campos) throws Exception;
+    public int getIdDoSelecionado(Object... parametros);
 }
