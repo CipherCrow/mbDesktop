@@ -228,6 +228,7 @@ public abstract class ModeloArquivo extends javax.swing.JInternalFrame {
 
     private void jbDetalheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDetalheActionPerformed
         carregaEdicaoSelecionado();
+        permitirAlterar( false );
     }//GEN-LAST:event_jbDetalheActionPerformed
 
 
