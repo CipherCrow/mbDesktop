@@ -102,7 +102,7 @@ public class IdiomaController implements Controller {
         
         camposParaEdicao.get(0).setText( util.castParaString( idiomaParaEdicao.getId() ));
         camposParaEdicao.get(1).setText( util.castParaString( idiomaParaEdicao.getNome() ));
-        camposParaEdicao.get(1).setText( util.castParaString( idiomaParaEdicao.getIdiomaDeReferencia() ));
+        camposParaEdicao.get(2).setText( util.castParaString( idiomaParaEdicao.getIdiomaDeReferencia() ));
            
     }
     @Override

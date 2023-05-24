@@ -72,29 +72,19 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource(caminhoIcone)));
     }
     
-    public void deletarRegistro(){
+    public void confimacaoDeletarRegistro(){
         int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir o registro?", "Confirmação de exclusão", JOptionPane.YES_NO_OPTION);
         if (opcao == JOptionPane.YES_OPTION) {
-            try {
-                MaterialController controller = new MaterialController();
-                controller.deletar( jtfId.getText() );
-                GerenciadorDeTelas.removerCadMaterial( jtfId.getText() );
-                
-                JOptionPane.showMessageDialog(null, "Registro Deletado Com Sucesso", "Sucesso ao Deletar", JOptionPane.INFORMATION_MESSAGE);
-                setVisible(false);
-                setClosed(true);
-            } catch (Exception e) {
-                ExceptionHandler.exibirExcecaoDialog(e);
-            }
-            
+            deletarRegistro(); 
         }
     }
     
     public abstract void habilitarCampos(boolean logica);
     public abstract void limparCampos();
-    public abstract void salvarMaterial();
+    public abstract void salvarRegistro();
     public abstract void preencherConteudo();
     public abstract void prepararParaEdicao(int idMaterialParaEdicao);
+    public abstract void deletarRegistro();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -250,7 +240,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbCancelarActionPerformed
     
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
-        salvarMaterial();
+        salvarRegistro();
         GerenciadorDeTelas.getArqMaterial().atualizarTabela();
     }//GEN-LAST:event_jbSalvarActionPerformed
 
@@ -259,7 +249,7 @@ public abstract class ModeloCadastrar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbAlterarActionPerformed
 
     private void jbDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeletarActionPerformed
-        deletarRegistro();
+        confimacaoDeletarRegistro();
     }//GEN-LAST:event_jbDeletarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

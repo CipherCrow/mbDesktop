@@ -44,6 +44,11 @@ public class GerenciadorDeTelas{
     public static IdiomaCadastro getCadIdioma(String chave, String idParaAlteracao) throws Exception{
         return (IdiomaCadastro) criaTelaSeJaNaoExistir(chave, idParaAlteracao, mapaIdiomaCadastro, IdiomaCadastro.class);
     }
+    
+    public static void removerCadIdioma(String... parametros) {
+        String chave = parametros[0];
+        mapaIdiomaCadastro.remove( chave );
+    }
         
     //Verifica se já existe uma tela, caso contrário verifica se é uma tela de alteração ou Adicionar e cria ela
     public static Object criaTelaSeJaNaoExistir(String chave, String idParaAlteracao , Map mapa, Class tipoDoMapa) 

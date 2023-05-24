@@ -1,5 +1,6 @@
 package view.gui;
 
+import controller.GerenciadorDeTelas;
 import controller.MaterialController;
 import exceptions.CamposInvalidosException;
 import java.awt.Dimension;
@@ -124,7 +125,7 @@ public class MaterialCadastro extends ModeloCadastrar {
     }
         
     @Override
-    public void salvarMaterial(){
+    public void salvarRegistro(){
         
         try{
             MaterialController controller = new MaterialController();
@@ -155,6 +156,7 @@ public class MaterialCadastro extends ModeloCadastrar {
             
             habilitarCampos(false);
             resetCadastro();
+            controller.carregarTudo( GerenciadorDeTelas.getArqMaterial().jtTabela );
             
         }catch(CamposInvalidosException e){
             e.printStackTrace();
@@ -165,5 +167,20 @@ public class MaterialCadastro extends ModeloCadastrar {
             ExceptionHandler.exibirExcecaoDialog(e);
         }
         
+    }
+    
+    @Override
+    public void deletarRegistro(){
+        try {
+                MaterialController controller = new MaterialController();
+                controller.deletar( jtfId.getText() );
+                GerenciadorDeTelas.removerCadMaterial( jtfId.getText() );
+                
+                JOptionPane.showMessageDialog(null, "Registro Deletado Com Sucesso", "Sucesso ao Deletar", JOptionPane.INFORMATION_MESSAGE);
+                setVisible(false);
+                setClosed(true);
+        } catch (Exception e) {
+            ExceptionHandler.exibirExcecaoDialog(e);
+        }
     }
 }

@@ -1,5 +1,7 @@
 package view.gui;
 
+import controller.GerenciadorDeTelas;
+import controller.IdiomaController;
 import controller.IdiomaController;
 import exceptions.CamposInvalidosException;
 import java.awt.Dimension;
@@ -87,7 +89,7 @@ public class IdiomaCadastro extends ModeloCadastrar {
     }
         
     @Override
-    public void salvarMaterial(){
+    public void salvarRegistro(){
         
         try{
             IdiomaController controller = new IdiomaController();
@@ -112,6 +114,7 @@ public class IdiomaCadastro extends ModeloCadastrar {
             
             habilitarCampos(false);
             resetCadastro();
+            controller.carregarTudo( GerenciadorDeTelas.getArqIdioma().jtTabela );
             
         }catch(CamposInvalidosException e){
             e.printStackTrace();
@@ -122,5 +125,19 @@ public class IdiomaCadastro extends ModeloCadastrar {
             ExceptionHandler.exibirExcecaoDialog(e);
         }
         
+    }
+    
+    public void deletarRegistro(){
+        try {
+                IdiomaController controller = new IdiomaController();
+                controller.deletar( jtfId.getText() );
+                GerenciadorDeTelas.removerCadIdioma(jtfId.getText() );
+                
+                JOptionPane.showMessageDialog(null, "Registro Deletado Com Sucesso", "Sucesso ao Deletar", JOptionPane.INFORMATION_MESSAGE);
+                setVisible(false);
+                setClosed(true);
+        } catch (Exception e) {
+            ExceptionHandler.exibirExcecaoDialog(e);
+        }
     }
 }
