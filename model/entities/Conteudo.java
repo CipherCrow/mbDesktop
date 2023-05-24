@@ -13,7 +13,7 @@ public class Conteudo {
     private ArrayList<Habilidade> habilidade  = new ArrayList<>();
     private ArrayList<Item> items  = new ArrayList<>();
     private ArrayList<Organizacao> organizacoes  = new ArrayList<>();
-    private ArrayList<MaterialItem> materiaisItens  = new ArrayList<>();
+    private ArrayList<Material> materiaisItens  = new ArrayList<>();
     private ArrayList<Antecedente> antecedente  = new ArrayList<>();
     private ArrayList<Idioma> idiomas  = new ArrayList<>(); 
     private ArrayList<Habilidade> habilidadesExtras  = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Conteudo {
             ArrayList<Habilidade> habilidade,
             ArrayList<Item> items,
             ArrayList<Organizacao> organizacoes,
-            ArrayList<MaterialItem> materiaisItens,
+            ArrayList<Material> materiaisItens,
             ArrayList<Antecedente> antecedente,
             ArrayList<Idioma> idiomas,
             ArrayList<Habilidade> habilidadesExtras) {
@@ -78,15 +78,15 @@ public class Conteudo {
     }
 
     //Materiais
-    public ArrayList<MaterialItem> getMateriaisItens() {
+    public ArrayList<Material> getMateriaisItens() {
         return materiaisItens;
     }
 
-    public void setMateriaisItens(ArrayList<MaterialItem> materiaisItens) {
+    public void setMateriaisItens(ArrayList<Material> materiaisItens) {
         this.materiaisItens = materiaisItens;
     }
 
-    public void addMaterial(MaterialItem material){
+    public void addMaterial(Material material){
         this.materiaisItens.add(material);
     }
     

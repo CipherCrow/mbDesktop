@@ -40,12 +40,12 @@ public class Configuracao {
         Configuracao.conteudos.add(conteudo);                           
     }
     
-    public static ArrayList<MaterialItem> coletarMateriais(){
+    public static ArrayList<Material> coletarMateriais(){
         if(Configuracao.conteudos.isEmpty()){
            return null; 
         }
         
-        ArrayList<MaterialItem> materiaisCadastrados = new ArrayList<>();
+        ArrayList<Material> materiaisCadastrados = new ArrayList<>();
         
         //Problema futuro se continuar usando ArrayList
         for (int temp = 0; temp < Configuracao.conteudos.size(); temp++) {

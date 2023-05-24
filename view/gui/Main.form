@@ -104,6 +104,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Idiomas"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiIdiomasActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmItens">
               <Properties>
@@ -223,6 +226,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Idioma"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiCadIdiomaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmiCadItem">
               <Properties>
