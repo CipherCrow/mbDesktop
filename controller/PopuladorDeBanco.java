@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 import model.jdbc.ConnectionFactory;
 import model.jdbc.TabelasEnum;
+import view.gui.ExceptionHandler;
 
 public class PopuladorDeBanco {
     private Connection con;
@@ -36,6 +37,7 @@ public class PopuladorDeBanco {
     
     public void criaTabelas() throws Exception{
         estruturarTabela(TabelasEnum.Material.getSqlCriacao());
+        estruturarTabela(TabelasEnum.Idioma.getSqlCriacao());
     }
     
     public void estruturarTabela(String sql){
@@ -45,16 +47,16 @@ public class PopuladorDeBanco {
             psmt.execute(sql);
             psmt.close();
         } catch(Exception e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
         }
         finally{
             try {
                 con.close();
             } catch (Exception e) {
-                System.err.println(e.getMessage());
+                e.printStackTrace();
+                ExceptionHandler.exibirExcecaoDialog(e);
             }
-        }
-        
-        
+        }  
     }
 }

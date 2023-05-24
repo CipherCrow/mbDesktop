@@ -3,6 +3,9 @@ package model.table;
 public enum TableEnum {
     Material(
         new String[] {"Nome", "Custo*" ,"Dano*","Dano+", "FN+", "Peso*"}
+            ),
+    Idioma(
+        new String[] {"Nome", "Idioma De Referencia"}
             );
 
     String[] arrayColunas;

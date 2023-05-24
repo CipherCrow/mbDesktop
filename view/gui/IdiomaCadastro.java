@@ -1,6 +1,6 @@
 package view.gui;
 
-import controller.MaterialController;
+import controller.IdiomaController;
 import exceptions.CamposInvalidosException;
 import java.awt.Dimension;
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class IdiomaCadastro extends ModeloCadastrar {
         jpCamposDeFiltro.add(jlIdiomaReferencia);
         jpCamposDeFiltro.add(jtfIdiomaReferencia);
   
-        jpCamposDeFiltro.setPreferredSize(new Dimension(jpCamposDeFiltro.getWidth(), jpCamposDeFiltro.getHeight()+50));
+        jpCamposDeFiltro.setPreferredSize(new Dimension(jpCamposDeFiltro.getWidth(), jpCamposDeFiltro.getHeight() - 200));
         
         habilitarCampos(false);
     }
@@ -53,7 +53,7 @@ public class IdiomaCadastro extends ModeloCadastrar {
     public void prepararParaEdicao(int idMaterialParaEdicao){
                
         try { 
-            MaterialController controller = new MaterialController();
+            IdiomaController controller = new IdiomaController();
             ArrayList<JTextField> camposParaEditar = new ArrayList<>();
             camposParaEditar.add(jtfId);
             camposParaEditar.add(jtfNome);
@@ -90,7 +90,7 @@ public class IdiomaCadastro extends ModeloCadastrar {
     public void salvarMaterial(){
         
         try{
-            MaterialController controller = new MaterialController();
+            IdiomaController controller = new IdiomaController();
                         
             if (getModo().equals("Alt") ){
                 controller.alterar(
@@ -99,14 +99,14 @@ public class IdiomaCadastro extends ModeloCadastrar {
                     jtfIdiomaReferencia.getText()
 //                    jtfDanoMultiplicavel.getText(),
                 );
-                JOptionPane.showMessageDialog(null, "Material Alterado Com Sucesso", "Sucesso ao Alterar Material", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Idioma Alterado Com Sucesso", "Sucesso ao Alterar Idioma", JOptionPane.INFORMATION_MESSAGE);
             }else{
                 controller.inserir(
                     jtfNome.getText(),
                     jtfIdiomaReferencia.getText()
 //                    jtfDanoMultiplicavel.getText(),
                 );
-                JOptionPane.showMessageDialog(null, "Material Salvo Com Sucesso", "Sucesso ao Salvar Material", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Idioma Salvo Com Sucesso", "Sucesso ao Salvar Idioma", JOptionPane.INFORMATION_MESSAGE);
                 limparCampos();
             }  
             

@@ -1,28 +1,28 @@
 package view.gui;
 
 import controller.GerenciadorDeTelas;
-import controller.MaterialController;
+import controller.IdiomaController;
 import exceptions.CamposInvalidosException;
 import java.sql.SQLException;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
-public class MaterialArquivo extends ModeloArquivo{
-    public MaterialArquivo(){  
+public class IdiomaArquivo extends ModeloArquivo{
+    public IdiomaArquivo(){  
 
-        resetarTituloIcone("Materiais Cadastrados",
-                           "/assets/images/submenu/icons8-medieval-20.png");
+        resetarTituloIcone("Idiomas Cadastrados",
+                           "/assets/images/submenu/icons8-spoken-20.png");
         
-        resetarPainelBordaComTitulo("Material - Descrição");
+        resetarPainelBordaComTitulo("Idioma - Descrição");
         
-        resetarIconeDemonstrativo("/assets/images/arquivo/icons8-iron-ore-100.png");
+        resetarIconeDemonstrativo("/assets/images/arquivo/icons8-talk-100.png");
              
     }
 
 
     @Override
     public void filtrar() {
-        MaterialController controller = new MaterialController();
+        IdiomaController controller = new IdiomaController();
         try {
             controller.filtrar( jtfNome.getText(), jtTabela );
         } catch (CamposInvalidosException e) {
@@ -42,7 +42,7 @@ public class MaterialArquivo extends ModeloArquivo{
     @Override
     public void atualizarTabela() {
         try {
-            MaterialController controller = new MaterialController();
+            IdiomaController controller = new IdiomaController();
             controller.carregarTudo( jtTabela );
         } catch (CamposInvalidosException e) {
             JOptionPane.showMessageDialog(null, "Existem campos vazios ou com caractéres inválidos!", "Erro ao Salvar: " + e, JOptionPane.ERROR_MESSAGE);
@@ -57,7 +57,7 @@ public class MaterialArquivo extends ModeloArquivo{
 
     @Override
     public void carregaDescricao() {
-        MaterialController controller = new MaterialController();
+        IdiomaController controller = new IdiomaController();
         controller.atualizaDescricao(jtTabela.getSelectedRow(), jtTabela);
         permitirAlterar( true );
     }
@@ -65,10 +65,10 @@ public class MaterialArquivo extends ModeloArquivo{
     @Override
     public void carregaEdicaoSelecionado() {
         try {
-            MaterialController controller = new MaterialController();
+            IdiomaController controller = new IdiomaController();
             int idDoSelecionadoNoBanco = controller.getIdDoSelecionado( jtTabela );
             
-            ViewUtil.abrirJanela( (JDesktopPane) this.getParent() , GerenciadorDeTelas.getCadMaterial(
+            ViewUtil.abrirJanela( (JDesktopPane) this.getParent() , GerenciadorDeTelas.getCadIdioma(
                     "Alterar-" + idDoSelecionadoNoBanco ,
                     idDoSelecionadoNoBanco + ""));
         } catch (Exception e) {

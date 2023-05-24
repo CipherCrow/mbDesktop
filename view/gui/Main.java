@@ -139,6 +139,11 @@ public class Main extends javax.swing.JFrame {
         jmiIdiomas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiIdiomas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/submenu/icons8-spoken-20.png"))); // NOI18N
         jmiIdiomas.setText("Idiomas");
+        jmiIdiomas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiIdiomasActionPerformed(evt);
+            }
+        });
         jmArquivo.add(jmiIdiomas);
 
         jmItens.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -274,8 +279,22 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiMateriaisActionPerformed
 
     private void jmiCadIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadIdiomaActionPerformed
-        ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getArqMaterial());
+        try {
+            ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getCadIdioma( "Novo","Novo" ));
+        } catch (Exception e) {
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
+        }
     }//GEN-LAST:event_jmiCadIdiomaActionPerformed
+
+    private void jmiIdiomasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiIdiomasActionPerformed
+        try {
+            ViewUtil.abrirJanela(jdpAreaDeTrabalho, GerenciadorDeTelas.getArqIdioma());
+        } catch (Exception e) {
+            e.printStackTrace();
+            ExceptionHandler.exibirExcecaoDialog(e);
+        }
+    }//GEN-LAST:event_jmiIdiomasActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
+import view.gui.IdiomaArquivo;
 import view.gui.IdiomaCadastro;
 import view.gui.MaterialArquivo;
 import view.gui.MaterialCadastro;
@@ -13,6 +14,8 @@ public class GerenciadorDeTelas{
     //Vai Crescer infinitamente, precisarei lidar com isso de alguma forma esperta
     private static MaterialArquivo arqMaterial;
     private static Map<String, MaterialCadastro> mapaMaterialCadastro = new HashMap<>();
+    
+    private static IdiomaArquivo arqIdioma;
     private static Map<String, IdiomaCadastro> mapaIdiomaCadastro = new HashMap<>();
     
     public static MaterialArquivo getArqMaterial() {
@@ -21,6 +24,27 @@ public class GerenciadorDeTelas{
         }
         return arqMaterial ;
     }
+    
+    public static MaterialCadastro getCadMaterial(String chave, String idParaAlteracao) throws Exception{
+        return (MaterialCadastro) criaTelaSeJaNaoExistir(chave, idParaAlteracao, mapaMaterialCadastro, MaterialCadastro.class);
+    }
+    
+    public static void removerCadMaterial(String... parametros) {
+        String chave = parametros[0];
+        mapaMaterialCadastro.remove( chave );
+    }
+    
+    public static IdiomaArquivo getArqIdioma() {
+        if(arqIdioma == null){
+            arqIdioma = new IdiomaArquivo();
+        }
+        return arqIdioma;
+    }
+    
+    public static IdiomaCadastro getCadIdioma(String chave, String idParaAlteracao) throws Exception{
+        return (IdiomaCadastro) criaTelaSeJaNaoExistir(chave, idParaAlteracao, mapaIdiomaCadastro, IdiomaCadastro.class);
+    }
+        
     //Verifica se já existe uma tela, caso contrário verifica se é uma tela de alteração ou Adicionar e cria ela
     public static Object criaTelaSeJaNaoExistir(String chave, String idParaAlteracao , Map mapa, Class tipoDoMapa) 
             throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
@@ -65,15 +89,5 @@ public class GerenciadorDeTelas{
         }
         return mapa.get( chave );
     }
-
-    public static MaterialCadastro getCadMaterial(String chave, String idParaAlteracao) throws Exception{
-        
-        return (MaterialCadastro) criaTelaSeJaNaoExistir(chave, idParaAlteracao, mapaIdiomaCadastro, MaterialCadastro.class);
-    }
-    
-    public static void removerCadMaterial(String... parametros) {
-        String chave = parametros[0];
-        mapaMaterialCadastro.remove( chave );
-    }
-    
+   
 }

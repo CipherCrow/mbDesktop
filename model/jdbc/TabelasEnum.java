@@ -6,7 +6,11 @@ public enum TabelasEnum {
     Raca(""),
     Classe(""),
     Habilidade(""),
-    Idioma(""),
+    Idioma(
+            "CREATE TABLE idioma" +
+            "(cod_idioma INT PRIMARY KEY AUTO_INCREMENT" +
+            ",nom_idioma VARCHAR(255) NOT NULL" +
+            ",nom_idiomaDeReferencia VARCHAR(255) NULL)"),
     Item(""),
     Material(
             "CREATE TABLE material"
