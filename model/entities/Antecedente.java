@@ -3,16 +3,16 @@ package model.entities;
 public class Antecedente {
     private int id;
     private String nome;
-    private String Requisitos;
+    private Requisito requisitos;
     private Habilidade beneficio;
     private Item EquipamentoBonus;
 
     public Antecedente(){}
 
-    public Antecedente(int id, String nome, String Requisitos, Habilidade beneficio, Item EquipamentoBonus) {
+    public Antecedente(int id, String nome, Requisito requisitos, Habilidade beneficio, Item EquipamentoBonus) {
         this.id = id;
         this.nome = nome;
-        this.Requisitos = Requisitos;
+        this.requisitos = requisitos;
         this.beneficio = beneficio;
         this.EquipamentoBonus = EquipamentoBonus;
     }
@@ -33,12 +33,12 @@ public class Antecedente {
         this.nome = nome;
     }
 
-    public String getRequisitos() {
-        return Requisitos;
+    public Requisito getRequisitos() {
+        return requisitos;
     }
 
-    public void setRequisitos(String Requisitos) {
-        this.Requisitos = Requisitos;
+    public void setRequisitos(Requisito requisitos) {
+        this.requisitos = requisitos;
     }
 
     public Habilidade getBeneficio() {

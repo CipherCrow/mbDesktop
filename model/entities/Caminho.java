@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Caminho {
     private String nome;
-    private String requisito;
+    private Requisito requisitos;
     private ArrayList<Raca> racasComuns;
     private Habilidade habilidadeAutomatica;
     private List<Habilidade> habilidadesExtras;
@@ -18,12 +18,12 @@ public class Caminho {
 
     public Caminho(
             String nome,
-            String requisito,
+            Requisito requisito,
             ArrayList<Raca> racasComuns,
             Habilidade habilidadeAutomatica,
             List<Habilidade> habilidadesExtras) {
         this.nome = nome;
-        this.requisito = requisito;
+        this.requisitos = requisito;
         this.racasComuns = racasComuns;
         this.habilidadeAutomatica = habilidadeAutomatica;
         this.habilidadesExtras = habilidadesExtras;
@@ -33,12 +33,12 @@ public class Caminho {
         this.nome = nome;
     }
 
-    public String getRequisito() {
-        return requisito;
+    public Requisito getRequisito() {
+        return requisitos;
     }
 
-    public void setRequisito(String requisito) {
-        this.requisito = requisito;
+    public void setRequisito(Requisito requisitos) {
+        this.requisitos = requisitos;
     }
 
     public ArrayList<Raca> getRacasComuns() {

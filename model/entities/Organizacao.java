@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Organizacao {
     private String nome;
-    private String requisitoDeIngressão;
+    private Requisito requisitoDeIngressão;
     private ArrayList<Habilidade> habilidadesExtras;
 
     public Organizacao(){}
 
-    public Organizacao(String nome, String requisitoDeIngressão, ArrayList<Habilidade> habilidadesExtras) {
+    public Organizacao(String nome, Requisito requisitoDeIngressão, ArrayList<Habilidade> habilidadesExtras) {
         this.nome = nome;
         this.requisitoDeIngressão = requisitoDeIngressão;
         this.habilidadesExtras = habilidadesExtras;
@@ -23,11 +23,11 @@ public class Organizacao {
         this.nome = nome;
     }
 
-    public String getRequisitoDeIngressão() {
+    public Requisito getRequisitoDeIngressão() {
         return requisitoDeIngressão;
     }
 
-    public void setRequisitoDeIngressão(String requisitoDeIngressão) {
+    public void setRequisitoDeIngressão(Requisito requisitoDeIngressão) {
         this.requisitoDeIngressão = requisitoDeIngressão;
     }
 
