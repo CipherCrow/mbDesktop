@@ -6,14 +6,24 @@ public class Requisito {
     private HashMap<Integer, Habilidade> habilidades;
     private Atributos atributos;
     private String feitoHeroicoNarrativo;
+    private int nivel;
 
     public Requisito() {
     }
 
-    public Requisito(HashMap<Integer, Habilidade> habilidades, Atributos atributos, String feitoHeroicoNarrativo) {
+    public Requisito(HashMap<Integer, Habilidade> habilidades, Atributos atributos, String feitoHeroicoNarrativo, int nivel) {
         this.habilidades = habilidades;
         this.atributos = atributos;
         this.feitoHeroicoNarrativo = feitoHeroicoNarrativo;
+        this.nivel = nivel;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
     }
 
     public HashMap<Integer, Habilidade> getHabilidades() {
