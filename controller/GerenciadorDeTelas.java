@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
+import view.gui.HabilidadeArquivo;
 import view.gui.IdiomaArquivo;
 import view.gui.IdiomaCadastro;
 import view.gui.MaterialArquivo;
@@ -17,6 +18,9 @@ public class GerenciadorDeTelas{
     
     private static IdiomaArquivo arqIdioma;
     private static Map<String, IdiomaCadastro> mapaIdiomaCadastro = new HashMap<>();
+    
+    private static HabilidadeArquivo arqHabilidade;
+    private static Map<String, HabilidadeCadastro> mapaHabilidadeCadastro = new HashMap<>();
     
     public static MaterialArquivo getArqMaterial() {
         if(arqMaterial == null){
@@ -48,6 +52,22 @@ public class GerenciadorDeTelas{
     public static void removerCadIdioma(String... parametros) {
         String chave = parametros[0];
         mapaIdiomaCadastro.remove( chave );
+    }
+    
+    public static HabilidadeArquivo getArqHabilidade() {
+        if(arqHabilidade == null){
+            arqHabilidade = new HabilidadeArquivo();
+        }
+        return arqHabilidade;
+    }
+    
+    public static HabilidadeCadastro getCadHabilidade(String chave, String idParaAlteracao) throws Exception{
+        return (HabilidadeCadastro) criaTelaSeJaNaoExistir(chave, idParaAlteracao, mapaHabilidadeCadastro, HabilidadeCadastro.class);
+    }
+    
+    public static void removerCadHabilidade(String... parametros) {
+        String chave = parametros[0];
+        mapaHabilidadeCadastro.remove( chave );
     }
         
     //Verifica se já existe uma tela, caso contrário verifica se é uma tela de alteração ou Adicionar e cria ela

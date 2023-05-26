@@ -6,7 +6,7 @@ public class Requisito {
     private HashMap<Integer, Habilidade> habilidades;
     private Atributos atributos;
     private String feitoHeroicoNarrativo;
-    private int nivel;
+    private Integer nivel;
 
     public Requisito() {
     }
@@ -16,6 +16,29 @@ public class Requisito {
         this.atributos = atributos;
         this.feitoHeroicoNarrativo = feitoHeroicoNarrativo;
         this.nivel = nivel;
+    }
+    
+    public String getDescricaoView() {
+        StringBuilder descricaoView = new StringBuilder("Nenhum Requisito");
+
+        if (habilidades != null || atributos != null || feitoHeroicoNarrativo != null || nivel != null) {
+            descricaoView = new StringBuilder();
+
+            if (nivel != null) {
+                descricaoView.append("'Nivel: ").append(this.nivel).append("' ");
+            }
+            if (feitoHeroicoNarrativo != null) {
+                descricaoView.append("'Feito: ").append(this.feitoHeroicoNarrativo).append("' ");
+            }
+            if (atributos != null) {
+                descricaoView.append("'Atributos: ").append(this.atributos).append("' ");
+            }
+            if (habilidades != null) {
+                descricaoView.append("'Habilidades: ").append(this.habilidades).append("' ");
+            }
+        }
+
+        return descricaoView.toString();
     }
 
     public int getNivel() {

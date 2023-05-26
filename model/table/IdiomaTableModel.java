@@ -12,7 +12,7 @@ public class IdiomaTableModel extends AbstractTableModel {
         this.idiomas = idiomas;
     }
 
-    public void setMateriais(ArrayList<Idioma> idiomas) {
+    public void setIdiomas(ArrayList<Idioma> idiomas) {
         this.idiomas = idiomas;
         fireTableDataChanged(); // Notifica a tabela que houve mudanças nos dados
     }

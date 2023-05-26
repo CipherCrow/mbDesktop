@@ -31,7 +31,7 @@ public class IdiomaController implements Controller {
         //verifica se o modelo já foi carregado anteriormente e atualiza ou inicia
         if( tabela.getModel().getClass().isInstance( IdiomaTableModel.class ) ){
             IdiomaTableModel modeloAtual = (IdiomaTableModel) tabela.getModel();
-            modeloAtual.setMateriais( materiaisCadastrados );
+            modeloAtual.setIdiomas(materiaisCadastrados );
         }else{    
             tabela.setModel( modelo );  
         }

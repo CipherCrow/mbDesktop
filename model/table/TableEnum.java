@@ -6,6 +6,9 @@ public enum TableEnum {
             ),
     Idioma(
         new String[] {"Nome", "Idioma De Referencia"}
+            ),
+    Habilidade(
+        new String[] {"Nome", "Categoria", "Tipo", "Mana", "Dificuldade", ""}
             );
 
     String[] arrayColunas;
